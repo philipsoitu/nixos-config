@@ -1,24 +1,34 @@
 {
-  description = "A very basic flake";
+  description = "My NixOS configuration with Home Manager";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
   };
 
-  outputs = { self, nixpkgs }:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
+  outputs = { self, nixos, home-manager, ... }: {
+    nixosConfigurations = {
+
+      nixos-desktop = nixos.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./nixos-config/configuration.nix
+
+          # Home Manager configuration module
+          home-manager.nixosModules.home-manager
+        ];
+        specialArgs = { inherit home-manager; };
       };
-      lib = nixpkgs.lib;
-    in {
-      nixosConfigurations = {
-        phil = lib.nixosSystem {
-          inherit system;
-          modules = [ ./configuration.nix ]
-        }
+
+    };
+
+    # Home Manager configuration (this part will be linked to your user)
+    homeConfigurations = {
+      phil = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixos.pkgs;
+        modules = [ ./home-manager/default.nix ];
       };
+    };
   };
 }
+
