@@ -29,12 +29,12 @@
         inherit system;
         specialArgs = { inherit inputs system; };
         modules = [
-          ./configuration.nix 
+          ./system/configuration.nix 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.phil = import ./home.nix;
+            home-manager.users.phil = import ./home/home.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];

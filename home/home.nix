@@ -1,10 +1,10 @@
 { inputs, config, pkgs, ... }: 
 
 {
-#  imports = [
-#    ./scripts
-#    ./programs
-# ];
+  imports = [
+    ./scripts
+    ./programs
+ ];
 
   home.username = "phil";
   home.homeDirectory = "/home/phil";
