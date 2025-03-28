@@ -6,6 +6,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/framework/configuration.nix
+        ./nixosModules
       ];
     }
   }

@@ -9,10 +9,6 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
 
-      # ./ssh.nix
-      # ./tmux.nix
-      # ./picom.nix
-      # ./networking.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
