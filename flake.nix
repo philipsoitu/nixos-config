@@ -17,12 +17,14 @@
     nixosConfigurations = {
       nixos-desktop = lib.nixosSystem {
         system = system;
+        specialArgs = { inherit home-manager; };
         modules = [
           ./nixos/common.nix
           ./nixos/nixos-desktop.nix
         ];
       };
     };
+
 
     homeConfigurations = {
       "phil@nixos-desktop" = home-manager.lib.homeManagerConfiguration {

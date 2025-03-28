@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, home-manager, ... }:
 
 {
   imports = [
@@ -9,21 +9,46 @@
   # General system configurations
   system.stateVersion = "24.11";
 
-  # Enable the X11 server
-  services.xserver.enable = true;
-  
-  
-  # Enable i3 window manager
-  services.xserver.windowManager.i3.enable = true;
+  # Allow unfree packages 
+  nixpkgs.config.allowUnfree = true;
 
-  # Enable Rofi as the application launcher and
-  # Enable Picom as the compositor
-  services.xserver.displayManager.sessionCommands = ''
-    ${pkgs.rofi}/bin/rofi -show drun &
-    ${pkgs.picom}/bin/picom &
-  '';
+  # Bootloader
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+
+  # Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # i3wm setup
+  services.xserver = {
+
+    # Enable the X11 server
+    enable = true;
+
+    # Enable i3 window manager
+    windowManager.i3.enable = true;
+
+    # Enable Rofi as the application launcher and
+    # Enable Picom as the compositor
+    displayManager.sessionCommands = ''
+      ${pkgs.rofi}/bin/rofi -show drun &
+      ${pkgs.picom}/bin/picom &
+    '';
+
+  };
+  
+  users.users.phil = {
+    isNormalUser = true;
+    description = "phil";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
+  };
 
   environment.systemPackages = with pkgs; [
+    git
+    vim
     polybar
     ghostty
     neovim
