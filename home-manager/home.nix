@@ -5,6 +5,11 @@
     username = "phil";
     homeDirectory = "/home/phil";
     stateVersion = "24.11";
+    
+    packages = with pkgs; [
+      zathura
+      texliveFull
+    ];
   };
 
   # Home Manager user configurations
