@@ -61,6 +61,15 @@
     ghostty
     neovim
     firefox
+
+    libgcc
+    gcc
+    lazygit
+    fzf
+    fd
+    ripgrep
+
+    jdk23
   ];
 
   # Home Manager settings
