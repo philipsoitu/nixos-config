@@ -70,6 +70,7 @@
     ripgrep
 
     jdk23
+    python3
   ];
 
   # Home Manager settings
