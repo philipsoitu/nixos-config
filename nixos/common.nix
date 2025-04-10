@@ -39,6 +39,8 @@
 
   };
 
+  services.geoclue2.enable = true;
+
 
   services.pipewire = {
     enable = true;
