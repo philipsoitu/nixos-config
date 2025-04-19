@@ -73,6 +73,7 @@
 
     jdk23
     python3
+    spotify
   ];
 
   # Home Manager settings
