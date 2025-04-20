@@ -74,6 +74,7 @@
     jdk23
     python3
     spotify
+    openconnect_openssl
   ];
 
   # Home Manager settings
