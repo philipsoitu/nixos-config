@@ -75,6 +75,7 @@
     python3
     spotify
     openconnect_openssl
+    vscode
   ];
 
   # Home Manager settings
