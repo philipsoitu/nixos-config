@@ -76,6 +76,7 @@
     spotify
     openconnect_openssl
     vscode
+    rustdesk
   ];
 
   # Home Manager settings
