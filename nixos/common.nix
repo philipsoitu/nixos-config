@@ -77,6 +77,7 @@
     ghostty
     neovim
     firefox
+    neofetch
 
     libgcc
     gcc
