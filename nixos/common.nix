@@ -56,6 +56,20 @@
     packages = with pkgs; [];
   };
 
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "no"; #Good security practice
+      PasswordAuthentication = false;
+      PubkeyAuthentication = true;
+      Port = 2222;
+    };
+  };
+
+  networking.firewall.allowedTCPPorts = [ 2222 ];
+  networking.firewall.allowedUDPPorts = [ ];
+
+
   environment.systemPackages = with pkgs; [
     git
     vim
