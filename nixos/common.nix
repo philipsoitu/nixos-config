@@ -92,6 +92,8 @@
     openconnect_openssl
     vscode
     rustdesk
+
+    nodejs_23
   ];
 
   # Home Manager settings
