@@ -95,7 +95,8 @@
 
     nodejs_23
 
-    wine
+    wineWowPackages.stable
+    winetricks
   ];
 
   # Home Manager settings
