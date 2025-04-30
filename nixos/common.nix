@@ -97,6 +97,7 @@
 
     wineWowPackages.stable
     winetricks
+    wget
   ];
 
   # Home Manager settings
