@@ -94,6 +94,8 @@
     rustdesk
 
     nodejs_23
+
+    wine
   ];
 
   # Home Manager settings
