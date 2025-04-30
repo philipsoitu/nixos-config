@@ -52,7 +52,7 @@
   users.users.phil = {
     isNormalUser = true;
     description = "phil";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "qemu" "kvm" ];
     packages = with pkgs; [];
   };
 
@@ -95,13 +95,37 @@
 
     nodejs_23
 
-    wineWowPackages.stable
-    winetricks
+    virt-manager
+    virt-viewer
+    spice
+    spice-gtk
+    win-virtio
+    win-spice
+
     wget
   ];
 
   # Home Manager settings
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
+
+
+  # kvm minecraft!!
+  boot.kernelModules = [ "kvm-amd" ];
+
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      swtpm.enable = true;
+      ovmf.enable = true;
+      ovmf.packages = [ pkgs.OVMFFull.fd ];
+    };
+  };
+
+  systemd.tmpfiles.rules = [
+    "L+ /var/lib/qemu/firmware - - - - ${pkgs.qemu}/share/qemu/firmware"
+  ];
+
+
 }
 
