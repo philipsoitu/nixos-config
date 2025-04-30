@@ -111,7 +111,18 @@
 
 
   # kvm minecraft!!
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ 
+    "kvm-amd"
+    "vfio"
+    "vfio_pci"
+    "vfio_iommu_type1"
+  ];
+
+  boot.kernelParams = [ 
+    "amd_iommu=on"
+    "iommu=pt"
+  ];
+
 
   virtualisation.libvirtd = {
     enable = true;
