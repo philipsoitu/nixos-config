@@ -131,13 +131,11 @@
   ];
 
 
-  virtualisation.libvirtd = {
+  virtualisation.libvirtd.qemu = {
     enable = true;
-    qemu = {
-      swtpm.enable = true;
-      ovmf.enable = true;
-      ovmf.packages = [ pkgs.OVMFFull.fd ];
-    };
+    swtpm.enable = true;
+    ovmf.enable = true;
+    ovmf.packages = [ pkgs.OVMFFull.fd ];
   };
 
   systemd.tmpfiles.rules = [
