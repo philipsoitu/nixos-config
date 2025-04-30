@@ -118,6 +118,13 @@
     "vfio_iommu_type1"
   ];
 
+  boot.initrd.kernelModules = [ 
+    "kvm-amd"
+    "vfio"
+    "vfio_pci"
+    "vfio_iommu_type1"
+  ];
+
   boot.kernelParams = [ 
     "amd_iommu=on"
     "iommu=pt"
