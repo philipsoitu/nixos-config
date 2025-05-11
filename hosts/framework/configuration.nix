@@ -62,12 +62,25 @@
     git
     kitty
     firefox
+    neovim
   ];
 
   programs.hyprland = {
     enable = true;
-    withUWSM = true;
     xwayland.enable = true;
+  };
+
+  services.xserver = {
+    enable = true;
+    displayManager = {
+      defaultSession = "hyprland";
+
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+	theme = "breeze";
+      };
+    };
   };
 
 
