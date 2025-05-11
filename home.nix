@@ -11,27 +11,23 @@
   ];
 
   home.file = {
+
+    # hyprland
     ".config/hypr/hyprland.conf".source = ./dotfiles/hypr/hyprland.conf;
+    
+    # waybar
+    ".config/waybar/config".source = ./dotfiles/waybar/config;
+    ".config/waybar/styles.css".source = ./dotfiles/waybar/styles.css;
+
+    # rofi
+    ".config/rofi/config.rasi".source = ./dotfiles/rofi/config.rasi;
+    ".config/rofi/catppuccin-mocha.rasi".source = ./dotfiles/rofi/catppuccin-mocha.rasi;
+
+
   };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/phil/etc/profile.d/hm-session-vars.sh
-  #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
