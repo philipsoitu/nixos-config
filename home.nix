@@ -23,7 +23,8 @@
     ".config/rofi/config.rasi".source = ./dotfiles/rofi/config.rasi;
     ".config/rofi/catppuccin-mocha.rasi".source = ./dotfiles/rofi/catppuccin-mocha.rasi;
 
-
+    # wallpaper
+    ".config/wallpapers/mountains.jpg".source = ./dotfiles/wallpapers/mountains.jpg;
   };
 
   home.sessionVariables = {

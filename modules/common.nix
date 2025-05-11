@@ -59,6 +59,7 @@
 
     waybar
     rofi
+    hyprpaper
 
     playerctl
     pulseaudio
