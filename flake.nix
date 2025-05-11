@@ -12,7 +12,7 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
-      nixos-framework = nixpkgs.lib.nixosSystem {
+      framework = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/framework/configuration.nix
