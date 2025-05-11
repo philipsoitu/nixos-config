@@ -75,13 +75,11 @@
   services.xserver.enable = true;
 
   services.displayManager = {
-      defaultSession = "hyprland";
-
-      sddm = {
-        enable = true;
-        wayland.enable = true;
-	theme = "breeze";
-      };
+    defaultSession = "hyprland";
+    sddm = {
+      enable = true;
+      wayland.enable = true;
+      theme = "breeze";
     };
   };
 
