@@ -1,7 +1,7 @@
 {
   "layer": "top",
-  "modules-left": ["hyprland/workspaces", "clock"],
-  "modules-center": [],
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
   "modules-right": ["pulseaudio", "battery", "network", "tray"],
   "clock": {
     "format": "{:%H:%M}"

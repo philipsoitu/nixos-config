@@ -5,3 +5,27 @@
   background: transparent;
 }
 
+#workspaces button {
+  padding: 0 5px;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+#workspaces button.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button.urgent {
+  color: red;
+}
+
+#workspaces button.visible {
+  color: yellow;
+}
+
