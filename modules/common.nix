@@ -72,9 +72,9 @@
     xwayland.enable = true;
   };
 
-  services.xserver = {
-    enable = true;
-    displayManager = {
+  services.xserver.enable = true;
+
+  services.displayManager = {
       defaultSession = "hyprland";
 
       sddm = {
