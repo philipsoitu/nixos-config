@@ -47,8 +47,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # fonts
+  fonts.fontDir.enable = true;
+  fonts.fontconfig.enable = true;
+
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
   ];
 
   # List packages installed in system profile. To search, run:
@@ -59,7 +63,6 @@
     git
     ghostty
     firefox
-    neovim
 
     waybar
     hyprpaper
@@ -69,6 +72,12 @@
     pavucontrol
     networkmanager
     upower
+
+    neovim
+    gcc
+    curl
+    fzf
+    fd
   ];
 
   programs.hyprland = {
