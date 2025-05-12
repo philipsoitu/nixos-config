@@ -12,8 +12,9 @@
 
   home.file = {
 
-    # hyprland
+    # hypr
     ".config/hypr/hyprland.conf".source = ./dotfiles/hypr/hyprland.conf;
+    ".config/hypr/hyprpaper.conf".source = ./dotfiles/hypr/hyprpaper.conf;
     
     # waybar
     ".config/waybar/config".source = ./dotfiles/waybar/config;
@@ -23,8 +24,11 @@
     ".config/rofi/config.rasi".source = ./dotfiles/rofi/config.rasi;
     ".config/rofi/catppuccin-mocha.rasi".source = ./dotfiles/rofi/catppuccin-mocha.rasi;
 
-    # wallpaper
-    ".config/wallpapers/mountains.jpg".source = ./dotfiles/wallpapers/mountains.jpg;
+    # wallpapers
+    ".config/wallpapers/lake.jpg".source = ./dotfiles/wallpapers/lake.jpg;
+
+    # ghostty
+    ".config/ghostty/config".source = ./dotfiles/ghostty/config;
   };
 
   home.sessionVariables = {
