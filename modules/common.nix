@@ -60,6 +60,7 @@
     waybar
     rofi
     hyprpaper
+    dunst
 
     playerctl
     pulseaudio

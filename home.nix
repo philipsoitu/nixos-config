@@ -27,6 +27,9 @@
     # wallpapers
     ".config/wallpapers/lake.jpg".source = ./dotfiles/wallpapers/lake.jpg;
 
+    # dunst
+    ".config/dunst/dunstrc".source = ./dotfiles/dunst/dunstrc;
+
     # ghostty
     ".config/ghostty/config".source = ./dotfiles/ghostty/config;
   };
