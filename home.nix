@@ -18,7 +18,7 @@
     
     # waybar
     ".config/waybar/config".source = ./dotfiles/waybar/config;
-    ".config/waybar/styles.css".source = ./dotfiles/waybar/styles.css;
+    ".config/waybar/style.css".source = ./dotfiles/waybar/style.css;
 
     # rofi
     ".config/rofi/config.rasi".source = ./dotfiles/rofi/config.rasi;
