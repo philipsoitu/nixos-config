@@ -58,9 +58,9 @@
     neovim
 
     waybar
-    rofi
     hyprpaper
     dunst
+    wofi
 
     networkmanager
     upower

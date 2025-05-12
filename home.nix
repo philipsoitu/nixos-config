@@ -20,9 +20,9 @@
     ".config/waybar/config".source = ./dotfiles/waybar/config;
     ".config/waybar/style.css".source = ./dotfiles/waybar/style.css;
 
-    # rofi
-    ".config/rofi/config.rasi".source = ./dotfiles/rofi/config.rasi;
-    ".config/rofi/catppuccin-mocha.rasi".source = ./dotfiles/rofi/catppuccin-mocha.rasi;
+    # wofi 
+    ".config/wofi/config".source = ./dotfiles/wofi/config;
+    ".config/wofi/style.css".source = ./dotfiles/wofi/style.css;
 
     # wallpapers
     ".config/wallpapers/lake.jpg".source = ./dotfiles/wallpapers/lake.jpg;
