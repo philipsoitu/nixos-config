@@ -62,8 +62,6 @@
     hyprpaper
     dunst
 
-    playerctl
-    pulseaudio
     networkmanager
     upower
   ];
@@ -82,6 +80,14 @@
       wayland.enable = true;
       theme = "breeze";
     };
+  };
+
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
   };
 
 
