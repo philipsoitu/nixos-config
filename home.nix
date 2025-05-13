@@ -25,6 +25,8 @@
 
     # wallpapers
     ".config/wallpapers/lake.jpg".source = ./dotfiles/wallpapers/lake.jpg;
+    ".config/wallpapers/mushroom.jpg".source = ./dotfiles/wallpapers/mushroom.jpg;
+    ".config/wallpapers/berries.jpg".source = ./dotfiles/wallpapers/berries.jpg;
 
     # dunst
     ".config/dunst/dunstrc".source = ./dotfiles/dunst/dunstrc;
