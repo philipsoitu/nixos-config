@@ -41,6 +41,7 @@
     ".config/nvim/lua/config/lazy.lua".source = ./dotfiles/nvim/lua/config/lazy.lua;
     ".config/nvim/lua/config/options.lua".source = ./dotfiles/nvim/lua/config/options.lua;
     ".config/nvim/lua/plugins/example.lua".source = ./dotfiles/nvim/lua/plugins/example.lua;
+    ".config/nvim/lua/plugins/colorscheme.lua".source = ./dotfiles/nvim/lua/plugins/colorscheme.lua;
     ".config/nvim/stylua.toml".source = ./dotfiles/nvim/stylua.toml;
   };
 
