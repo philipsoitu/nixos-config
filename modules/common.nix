@@ -72,6 +72,7 @@
     pavucontrol
     networkmanager
     upower
+    brightnessctl
 
     neovim
     gcc
