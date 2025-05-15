@@ -73,6 +73,7 @@
     networkmanager
     upower
     brightnessctl
+    wl-clipboard
 
     neovim
     gcc
