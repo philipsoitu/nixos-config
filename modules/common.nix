@@ -70,6 +70,8 @@
     wofi
 
     pavucontrol
+    pulseaudio
+
     networkmanager
     upower
     brightnessctl
@@ -100,12 +102,15 @@
 
   services.pipewire = {
     enable = true;
-    audio.enable = true;
     alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
   };
 
+  environment.etc."wireplumber/defaults.lua.d/50-audio.lua".text = ''
+    default_audio_sink = "alsa_output.pci-0000_c1_00.6.analog-stereo"
+    '';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
