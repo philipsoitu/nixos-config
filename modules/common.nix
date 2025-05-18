@@ -82,6 +82,8 @@
     curl
     fzf
     fd
+    unzip
+    wget
   ];
 
   programs.hyprland = {
