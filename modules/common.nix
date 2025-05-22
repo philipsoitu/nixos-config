@@ -85,6 +85,9 @@
     unzip
     wget
     zig
+
+    logisim
+    kicad
   ];
 
   programs.hyprland = {
