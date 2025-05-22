@@ -84,6 +84,7 @@
     fd
     unzip
     wget
+    zig
   ];
 
   programs.hyprland = {
