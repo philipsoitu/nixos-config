@@ -78,7 +78,6 @@
     wl-clipboard
 
     neovim
-    gcc
     curl
     fzf
     fd
@@ -88,6 +87,9 @@
 
     logisim
     kicad
+
+    gcc
+    gnumake
   ];
 
   programs.hyprland = {
