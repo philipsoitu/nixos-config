@@ -85,11 +85,13 @@
     wget
     zig
 
-    logisim
+    logisim-evolution
     kicad
 
     gcc
     gnumake
+    tree
+    man-pages
   ];
 
   programs.hyprland = {
