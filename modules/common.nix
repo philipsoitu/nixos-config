@@ -92,6 +92,8 @@
     gnumake
     tree
     man-pages
+
+    mpv
   ];
 
   programs.hyprland = {
