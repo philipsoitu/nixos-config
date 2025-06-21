@@ -112,12 +112,14 @@
     };
   };
 
+  # audio fix hopefully
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    wireplumber.enable = true;
   };
 
   environment.etc."wireplumber/defaults.lua.d/50-audio.lua".text = ''
