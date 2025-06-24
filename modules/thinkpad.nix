@@ -9,6 +9,7 @@
     users = {
       "phil" = import ../hosts/thinkpad/home.nix;
     };
+    backupFileExtension = "backup";
   };
 
 

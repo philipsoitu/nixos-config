@@ -9,6 +9,7 @@
     users = {
       "phil" = import ../hosts/framework/home.nix;
     };
+    backupFileExtension = "backup";
   };
 
   services.tlp = {
