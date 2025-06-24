@@ -4,6 +4,13 @@
 
   networking.hostName = "thinkpad"; 
 
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "phil" = import ../hosts/thinkpad/home.nix;
+    };
+  };
+
 
    # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
