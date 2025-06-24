@@ -1,4 +1,4 @@
-framework{
+{
   description = "nixos btw";
 
   inputs = {

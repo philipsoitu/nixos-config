@@ -12,37 +12,37 @@
 
   home.file = {
     # hypr
-    ".config/hypr/hyprland.conf".source = ./dotfiles/hypr/hyprland.conf;
-    ".config/hypr/hyprpaper.conf".source = ./dotfiles/hypr/hyprpaper.conf;
+    ".config/hypr/hyprland.conf".source = ../../dotfiles/hypr/hyprland.conf;
+    ".config/hypr/hyprpaper.conf".source = ../../dotfiles/hypr/hyprpaper.conf;
     
     # waybar
-    ".config/waybar/config".source = ./dotfiles/waybar/config;
-    ".config/waybar/style.css".source = ./dotfiles/waybar/style.css;
+    ".config/waybar/config".source = ../../dotfiles/waybar/config;
+    ".config/waybar/style.css".source = ../../dotfiles/waybar/style.css;
 
     # wofi 
-    ".config/wofi/config".source = ./dotfiles/wofi/config;
-    ".config/wofi/style.css".source = ./dotfiles/wofi/style.css;
+    ".config/wofi/config".source = ../../dotfiles/wofi/config;
+    ".config/wofi/style.css".source = ../../dotfiles/wofi/style.css;
 
     # wallpapers
-    ".config/wallpapers/lake.jpg".source = ./dotfiles/wallpapers/lake.jpg;
-    ".config/wallpapers/mushroom.jpg".source = ./dotfiles/wallpapers/mushroom.jpg;
-    ".config/wallpapers/berries.jpg".source = ./dotfiles/wallpapers/berries.jpg;
+    ".config/wallpapers/lake.jpg".source = ../../dotfiles/wallpapers/lake.jpg;
+    ".config/wallpapers/mushroom.jpg".source = ../../dotfiles/wallpapers/mushroom.jpg;
+    ".config/wallpapers/berries.jpg".source = ../../dotfiles/wallpapers/berries.jpg;
 
     # dunst
-    ".config/dunst/dunstrc".source = ./dotfiles/dunst/dunstrc;
+    ".config/dunst/dunstrc".source = ../../dotfiles/dunst/dunstrc;
 
     # ghostty
-    ".config/ghostty/config".source = ./dotfiles/ghostty/config;
+    ".config/ghostty/config".source = ../../dotfiles/ghostty/config;
 
     # neovim
-    ".config/nvim/init.lua".source = ./dotfiles/nvim/init.lua;
-    ".config/nvim/lua/config/autocmds.lua".source = ./dotfiles/nvim/lua/config/autocmds.lua;
-    ".config/nvim/lua/config/keymaps.lua".source = ./dotfiles/nvim/lua/config/keymaps.lua;
-    ".config/nvim/lua/config/lazy.lua".source = ./dotfiles/nvim/lua/config/lazy.lua;
-    ".config/nvim/lua/config/options.lua".source = ./dotfiles/nvim/lua/config/options.lua;
-    ".config/nvim/lua/plugins/example.lua".source = ./dotfiles/nvim/lua/plugins/example.lua;
-    ".config/nvim/lua/plugins/colorscheme.lua".source = ./dotfiles/nvim/lua/plugins/colorscheme.lua;
-    ".config/nvim/stylua.toml".source = ./dotfiles/nvim/stylua.toml;
+    ".config/nvim/init.lua".source = ../../dotfiles/nvim/init.lua;
+    ".config/nvim/lua/config/autocmds.lua".source = ../../dotfiles/nvim/lua/config/autocmds.lua;
+    ".config/nvim/lua/config/keymaps.lua".source = ../../dotfiles/nvim/lua/config/keymaps.lua;
+    ".config/nvim/lua/config/lazy.lua".source = ../../dotfiles/nvim/lua/config/lazy.lua;
+    ".config/nvim/lua/config/options.lua".source = ../../dotfiles/nvim/lua/config/options.lua;
+    ".config/nvim/lua/plugins/example.lua".source = ../../dotfiles/nvim/lua/plugins/example.lua;
+    ".config/nvim/lua/plugins/colorscheme.lua".source = ../../dotfiles/nvim/lua/plugins/colorscheme.lua;
+    ".config/nvim/stylua.toml".source = ../../dotfiles/nvim/stylua.toml;
   };
 
   home.sessionVariables = {
