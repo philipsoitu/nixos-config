@@ -4,6 +4,13 @@
   networking.hostName = "framework";
   services.fwupd.enable = true;
 
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "phil" = import ../hosts/framework/home.nix;
+    };
+  };
+
   services.tlp = {
     enable = true;
     settings = {

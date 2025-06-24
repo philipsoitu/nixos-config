@@ -36,14 +36,6 @@
     packages = with pkgs; [];
   };
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "phil" = import ../home.nix;
-    };
-    backupFileExtension = "backup";
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
