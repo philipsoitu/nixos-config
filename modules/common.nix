@@ -75,9 +75,6 @@
     wget
     zig
 
-    logisim-evolution
-    kicad
-
     gcc
     gnumake
     tree
