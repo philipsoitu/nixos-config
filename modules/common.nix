@@ -96,35 +96,7 @@
     mpv
   ];
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
-  services.xserver.enable = true;
-
-  services.displayManager = {
-    defaultSession = "hyprland";
-    sddm = {
-      enable = true;
-      wayland.enable = true;
-      theme = "breeze";
-    };
-  };
-
-  # audio fix hopefully
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  environment.etc."wireplumber/defaults.lua.d/50-audio.lua".text = ''
-    default_audio_sink = "alsa_output.pci-0000_c1_00.6.analog-stereo"
-    '';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

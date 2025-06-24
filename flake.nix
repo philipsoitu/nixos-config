@@ -1,4 +1,4 @@
-{
+framework{
   description = "nixos btw";
 
   inputs = {
@@ -12,6 +12,7 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
+
       framework = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
@@ -19,6 +20,15 @@
           inputs.home-manager.nixosModules.default
         ];
       };
+
+      thinkpad = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/thinkpad/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+
     };
   };
 }
