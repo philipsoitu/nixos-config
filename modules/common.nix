@@ -81,6 +81,8 @@
     man-pages
 
     mpv
+
+    code-cursor
   ];
 
 
