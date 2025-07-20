@@ -5,6 +5,7 @@
 
   services.xserver = {
     enable = true;
+    dpi = 192;
 
     desktopManager = {
       xterm.enable = false;
