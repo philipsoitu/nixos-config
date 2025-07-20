@@ -6,6 +6,6 @@
     ../../modules/common.nix
     ../../modules/framework.nix
     ../../modules/latex.nix
-    ../../modules/window-managers/hyprland.nix
+    ../../modules/window-managers/i3.nix
   ];
 }
