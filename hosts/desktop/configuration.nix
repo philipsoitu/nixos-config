@@ -5,6 +5,6 @@
     ./hardware-configuration.nix
     ../../modules/common.nix
     ../../modules/desktop.nix
-    ../../modules/hyprland.nix
+    ../../modules/window-managers/hyprland.nix
   ];
 }

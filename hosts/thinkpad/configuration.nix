@@ -2,8 +2,9 @@
 
 {
   imports = [
+    ./hardware-configuration.nix
     ../../modules/common.nix
     ../../modules/thinkpad.nix
-    ./hardware-configuration.nix
+    ../../modules/window-managers/kde.nix
   ];
 }
