@@ -2,9 +2,10 @@
 
 {
   imports = [
+    ./hardware-configuration.nix
     ../../modules/common.nix
     ../../modules/framework.nix
-    ./hardware-configuration.nix
     ../../modules/latex.nix
+    ../../modules/hyprland.nix
   ];
 }
