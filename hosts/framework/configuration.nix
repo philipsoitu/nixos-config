@@ -4,17 +4,14 @@
   imports =
     [
       ./hardware-configuration.nix
+      ../../nixosModules
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  # Bootloader
+  boot.loader.grub.enable = true;
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.device = "nodev";
   boot.loader.efi.canTouchEfiVariables = true;
-
-
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  networking.hostName = "framework"; # Define your hostname.
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -41,14 +38,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim
-    wget
-    git
-  ];
 
   system.stateVersion = "24.11";
 }
