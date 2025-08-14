@@ -1,0 +1,32 @@
+{ config, lib, pkgs, ... }:
+
+{
+  options.hyprland.enable = lib.mkEnableOption "Hyprland git";
+
+  config = lib.mkIf config.hyprland.enable {
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+
+    services.xserver.enable = true;
+
+    services.displayManager = {
+      defaultSession = "hyprland";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+        theme = "breeze";
+      };
+    };
+  
+    services.pulseaudio.enable = false;
+    security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+  };
+}

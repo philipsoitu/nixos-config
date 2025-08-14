@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../homeManagerModules
+    ../../modules/home
    ];
 
   # The User and Path it manages
