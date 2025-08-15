@@ -8,5 +8,4 @@
     ];
 
     hyprland.enable = true;
-
 }
