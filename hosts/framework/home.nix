@@ -17,6 +17,7 @@
   hyprland.enable = true;
   hyprpaper.enable = true;
   waybar.enable = true;
+  wallpapers.enable = true;
   wofi.enable = true;
   dunst.enable = true;
 
