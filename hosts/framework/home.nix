@@ -22,6 +22,7 @@
 
   # apps
   ghostty.enable = true;
+  firefox.enable = true;
 
   # terminal apps
   git.enable = true;
