@@ -9,26 +9,26 @@
       settings = {
 
         global = {
-          frame_color = "#d5c4a1"
-          separator_color = "#d5c4a1"
+          frame_color = "#d5c4a1";
+          separator_color = "#d5c4a1";
         };
 
         base16_low = {
-          msg_urgency = "low"
-          background = "#3c3836"
-          foreground = "#665c54"
+          msg_urgency = "low";
+          background = "#3c3836";
+          foreground = "#665c54";
         };
 
         base16_normal = {
-          msg_urgency = "normal"
-          background = "#504945"
-          foreground = "#d5c4a1"
+          msg_urgency = "normal";
+          background = "#504945";
+          foreground = "#d5c4a1";
         };
 
         base16_critical = {
-          msg_urgency = "critical"
-          background = "#fb4934"
-          foreground = "#ebdbb2"
+          msg_urgency = "critical";
+          background = "#fb4934";
+          foreground = "#ebdbb2";
         };
       };
     };

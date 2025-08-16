@@ -4,7 +4,7 @@
   options.waybar.enable = lib.mkEnableOption "Enable waybar";
 
   config = lib.mkIf config.waybar.enable {
-    package.waybar = {
+    programs.waybar = {
       enable = true;
 
       settings.mainBar = {
