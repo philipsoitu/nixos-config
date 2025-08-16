@@ -13,8 +13,16 @@
   # Let Home Manager manage itself
   programs.home-manager.enable = true;
 
+  # desktop config
+  hyprland.enable = true;
+  hyprpaper.enable = true;
+  waybar.enable = true;
+  wofi.enable = true;
+
+  # apps
+  ghostty.enable = true;
+
+  # terminal apps
   git.enable = true;
   neovim.enable = true;
-  ghostty.enable = true;
-  hyprland.enable = true;
 }
