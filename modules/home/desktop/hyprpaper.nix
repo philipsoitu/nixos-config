@@ -9,7 +9,7 @@
 
       settings = {
         preload = [
-          "home/phil/.config/wallpaper/lake.jpg"
+          "/home/phil/.config/wallpaper/lake.jpg"
         ];
 
         wallpaper = [
