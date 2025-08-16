@@ -16,5 +16,6 @@
         window-padding-y = 0;
       };
     };
+  };
 }
 
