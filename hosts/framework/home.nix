@@ -18,6 +18,7 @@
   hyprpaper.enable = true;
   waybar.enable = true;
   wofi.enable = true;
+  dunst.enable = true;
 
   # apps
   ghostty.enable = true;
