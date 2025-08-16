@@ -5,7 +5,7 @@
     ./hyprland.nix
     ./hyprpaper.nix
     ./waybar.nix
-    ./wallpapers
+    ./wallpapers.nix
     ./wofi.nix
     ./dunst.nix
   ];
