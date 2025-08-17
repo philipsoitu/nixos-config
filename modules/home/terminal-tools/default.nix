@@ -3,6 +3,6 @@
 {
   imports = [
     ./git.nix
-    ./neovim.nix
+    ./neovim
   ];
 }
