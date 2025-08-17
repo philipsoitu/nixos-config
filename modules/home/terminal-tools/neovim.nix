@@ -10,14 +10,10 @@
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
+      vimdiffAlias = true;
 
       plugins = with pkgs.vimPlugins; [
         nvim-treesitter
-        nvim-lspconfig
-        nvim-cmp
-        luasnip
-        which-key-nvim
-        nvim-tree
         telescope-nvim
       ];
 
@@ -36,9 +32,6 @@
         local map = vim.keymap.set
         local opts = { noremap = true, silent = true }
 
-        -- Open nvim-tree
-        map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
         -- Optional: basic Telescope mapping
         map("n", "<leader>f", ":Telescope find_files<CR>", opts)
 
@@ -47,16 +40,6 @@
           ensure_installed = "all",
           highlight = { enable = true },
         }
-
-        -- nvim-tree setup
-        require("nvim-tree").setup {
-          auto_close = true,
-          hijack_cursor = true,
-          view = { width = 30, side = "left" },
-        }
-
-        -- which-key setup
-        require("which-key").setup {}
       '';
     };
   };
