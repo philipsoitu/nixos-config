@@ -12,8 +12,22 @@
       vimAlias = true;
       vimdiffAlias = true;
 
+      extraPackages = with pkgs; [
+	zls
+        wl-clipboard
+      ];
+
+      plugins = with pkgs.vimPlugins; [
+        {
+	  plugin = nvim-lspconfig;
+	  config = toLuaFile ./plugins/lsp.lua
+	}
+      ];
+
+
+
       extraLuaConfig = ''
-        ${builtins.readFile ./init.lua }
+        ${builtins.readFile ./options.lua }
       '';
     };
   };
