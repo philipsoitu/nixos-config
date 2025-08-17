@@ -4,12 +4,7 @@
   options.neovim.enable = lib.mkEnableOption "Enable neovim";
 
   config = lib.mkIf config.neovim.enable {
-    programs.neovim =
-    let
-      toLua = str: "lua << EOF\n${str}\nEOF\n";
-      toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-    in
-    {
+    programs.neovim = {
       enable = true;
 
       defaultEditor = true;
@@ -18,23 +13,20 @@
       vimdiffAlias = true;
 
       extraPackages = with pkgs; [
-	zls
         wl-clipboard
       ];
-
-      plugins = with pkgs.vimPlugins; [
-        {
-	  plugin = nvim-lspconfig;
-	  config = toLuaFile ./plugins/lsp.lua;
-	}
-      ];
-
-
-
-      extraLuaConfig = ''
-        ${builtins.readFile ./options.lua }
-      '';
     };
+    home.file.".config/nvim/init.lua".source = ./init.lua;
+    home.file.".config/nvim/lua/config/autocmds.lua".source = ./lua/config/autocmds.lua;
+    home.file.".config/nvim/lua/config/keymaps.lua".source = ./lua/config/keymaps.lua;
+    home.file.".config/nvim/lua/config/lazy.lua".source = ./lua/config/lazy.lua;
+    home.file.".config/nvim/lua/config/options.lua".source = ./lua/config/options.lua;
+    home.file.".config/nvim/lua/plugins/example.lua".source = ./lua/plugins/example.lua;
+    home.file.".config/nvim/lua/plugins/colorscheme.lua".source = ./lua/plugins/colorscheme.lua;
+    home.file.".config/nvim/stylua.toml".source = ./stylua.toml;
+
+
+
   };
 }
 
