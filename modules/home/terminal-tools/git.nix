@@ -8,6 +8,9 @@
       enable = true;
       userName = "philipsoitu";
       userEmail = "philip.soitu@gmail.com";
+
+      extraConfig.core.editor = "nvim";
+
     };
   };
 }
