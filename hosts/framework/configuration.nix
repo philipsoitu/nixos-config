@@ -10,4 +10,6 @@
     hyprland.enable = true;
     pipewire.enable = true;
     sddm.enable = true;
+
+    laptop.enable = true;
 }
