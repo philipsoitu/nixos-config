@@ -6,16 +6,17 @@
   config = lib.mkIf config.hyprpaper.enable {
     services.hyprpaper = {
       enable = true;
+      package = pkgs.hyprpaper;
 
       settings = {
         preload = [
-          "/home/phil/.config/wallpaper/lake.jpg"
+          "/home/phil/.config/wallpapers/lake.jpg"
         ];
 
         wallpaper = [
-          "eDP-1, /home/phil/.config/wallpapers/lake.jpg"
-          "DP-2, /home/phil/.config/wallpapers/lake.jpg"
-          "HDMI-A-1, /home/phil/.config/wallpapers/lake.jpg"
+          "eDP-1,/home/phil/.config/wallpapers/lake.jpg"
+          "DP-2,/home/phil/.config/wallpapers/lake.jpg"
+          "HDMI-A-1,/home/phil/.config/wallpapers/lake.jpg"
         ];
       };
     };

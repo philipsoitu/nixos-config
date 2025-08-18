@@ -24,7 +24,7 @@
       monitor=,preferred,auto,auto
 
       exec-once = sleep 1 && waybar
-      exec-once = hyprpaper
+      exec-once = sleep 2 && hyprpaper
       exec-once = dunst
 
       ###################
