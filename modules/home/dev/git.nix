@@ -9,8 +9,10 @@
       userName = "philipsoitu";
       userEmail = "philip.soitu@gmail.com";
 
-      extraConfig.core.editor = "nvim";
-
+      extraConfig = {
+        init.defaultBranch = "main";
+        core.editor = "nvim";
+      };
     };
   };
 }
