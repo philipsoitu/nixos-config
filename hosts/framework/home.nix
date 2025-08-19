@@ -28,4 +28,5 @@
   # terminal apps
   git.enable = true;
   neovim.enable = true;
+  bash.enable = true;
 }
