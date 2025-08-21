@@ -4,7 +4,7 @@
   users.users.phil = {
     isNormalUser = true;
     description = "phil";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "disk" ];
     packages = with pkgs; [];
   };
 }

@@ -7,9 +7,10 @@
       ../../modules/nixos
     ];
 
-    hyprland.enable = true;
-    pipewire.enable = true;
-    sddm.enable = true;
+  hyprland.enable = true;
+  pipewire.enable = true;
+  sddm.enable = true;
 
-    laptop.enable = true;
+  laptop.enable = true;
+  rpi.enable = true;
 }
