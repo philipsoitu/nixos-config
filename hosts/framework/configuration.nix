@@ -12,5 +12,5 @@
   sddm.enable = true;
 
   laptop.enable = true;
-  rpi.enable = true;
+  rpi-imager.enable = true;
 }

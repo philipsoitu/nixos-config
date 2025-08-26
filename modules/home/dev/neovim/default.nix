@@ -24,9 +24,6 @@
     home.file.".config/nvim/lua/plugins/example.lua".source = ./lua/plugins/example.lua;
     home.file.".config/nvim/lua/plugins/colorscheme.lua".source = ./lua/plugins/colorscheme.lua;
     home.file.".config/nvim/stylua.toml".source = ./stylua.toml;
-
-
-
   };
 }
 

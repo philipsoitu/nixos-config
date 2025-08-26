@@ -7,5 +7,6 @@
     ./hyprland.nix
     ./pipewire.nix
     ./sddm.nix
+    ./rpi-imager.nix
   ];
 }

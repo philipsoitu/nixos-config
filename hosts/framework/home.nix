@@ -29,4 +29,6 @@
   git.enable = true;
   neovim.enable = true;
   bash.enable = true;
+  tmux.enable = true;
+
 }
