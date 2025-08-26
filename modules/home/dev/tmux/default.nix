@@ -6,6 +6,7 @@
   config = lib.mkIf config.tmux.enable {
     programs.tmux = {
       enable = true;
+      mouse = true;
 
       extraConfig = ''
         set -g base-index 1
