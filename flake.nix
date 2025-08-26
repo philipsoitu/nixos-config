@@ -11,7 +11,6 @@
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-
       framework = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -30,9 +29,9 @@
     homeConfigurations = {
       ubuntu-wsl = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-	modules = [
-	  ./hosts/ubuntu-wsl/home.nix
-	];
+        modules = [
+	        ./hosts/ubuntu-wsl/home.nix
+	      ];
       };
     };
 
