@@ -9,7 +9,6 @@
   home.username = "phil";
   home.homeDirectory = "/home/phil";
   home.stateVersion = "24.11";
-  home.backupFileExtension = "backup";
 
   # terminal apps
   git.enable = true;
