@@ -13,6 +13,7 @@
       vimdiffAlias = true;
 
       extraPackages = with pkgs; [
+        gcc
         wl-clipboard
       ];
     };
