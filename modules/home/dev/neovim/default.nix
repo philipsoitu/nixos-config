@@ -15,6 +15,11 @@
       extraPackages = with pkgs; [
         gcc
         wl-clipboard
+
+        #LSPs
+        zls
+        lua-language-server
+        tinymist
       ];
     };
     home.file.".config/nvim/init.lua".source = ./init.lua;
