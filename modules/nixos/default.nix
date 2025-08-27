@@ -8,5 +8,6 @@
     ./pipewire.nix
     ./sddm.nix
     ./rpi-imager.nix
+    ./school.nix
   ];
 }
