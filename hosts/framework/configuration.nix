@@ -14,4 +14,5 @@
   laptop.enable = true;
   rpi-imager.enable = true;
   school.enable = true;
+  rustdesk.enable = true;
 }

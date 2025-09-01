@@ -9,5 +9,6 @@
     ./sddm.nix
     ./rpi-imager.nix
     ./school.nix
+    ./rustdesk.nix
   ];
 }
