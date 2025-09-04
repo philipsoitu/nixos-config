@@ -10,5 +10,6 @@
     ./rpi-imager.nix
     ./school.nix
     ./rustdesk.nix
+    ./avahi.nix
   ];
 }
