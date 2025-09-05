@@ -1,6 +1,6 @@
 {
   services.avahi = {
     enable = true;
-    nssmdns = true; # enables .local resolution
+    nssmdns4 = true; # enables .local resolution
   };
 }
