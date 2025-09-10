@@ -11,5 +11,6 @@
     ./school.nix
     ./rustdesk.nix
     ./avahi.nix
+    ./intellij.nix
   ];
 }
