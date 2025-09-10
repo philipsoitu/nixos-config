@@ -17,7 +17,7 @@
         wl-clipboard
 
         #LSPs
-        zls
+        zls_0_15
         lua-language-server
         tinymist
       ];
