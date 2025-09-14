@@ -36,7 +36,7 @@ vim.o.smartcase = true
 
 -- timing
 vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 0
 
 
 -- splits
