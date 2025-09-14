@@ -7,6 +7,7 @@
     programs.tmux = {
       enable = true;
       shortcut = "SPACE";
+      terminal = "tmux-256color";
       baseIndex = 1;
       clock24 = true;
       escapeTime = 0;
