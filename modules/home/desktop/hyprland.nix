@@ -178,7 +178,7 @@
       ### KEYBINDINGS ###
       ###################
 
-      bind = , Print, exec, hyprshot -m region
+      bind = , Print, exec, sh -c 'mkdir -p ~/screenshot && hyprshot -m region -o ~/screenshot'
 
       bind = SUPER, RETURN, exec, $terminal
       bind = SUPER_SHIFT, Q, killactive,
