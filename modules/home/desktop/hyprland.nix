@@ -178,6 +178,8 @@
       ### KEYBINDINGS ###
       ###################
 
+      bind = , Print, exec, hyprshot -m region
+
       bind = SUPER, RETURN, exec, $terminal
       bind = SUPER_SHIFT, Q, killactive,
       bind = SUPER, M, exit,

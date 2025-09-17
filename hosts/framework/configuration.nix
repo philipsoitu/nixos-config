@@ -10,6 +10,7 @@
   hyprland.enable = true;
   pipewire.enable = true;
   sddm.enable = true;
+  hyprshot.enable = true;
 
   laptop.enable = true;
   rpi-imager.enable = true;

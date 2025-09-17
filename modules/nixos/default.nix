@@ -12,5 +12,6 @@
     ./rustdesk.nix
     ./avahi.nix
     ./intellij.nix
+    ./hyprshot.nix
   ];
 }
