@@ -12,6 +12,8 @@
   sddm.enable = true;
   hyprshot.enable = true;
 
+  minecraft.enable = true;
+
   laptop.enable = true;
   rpi-imager.enable = true;
   school.enable = true;

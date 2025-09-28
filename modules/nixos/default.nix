@@ -4,6 +4,7 @@
   imports = [
     ./core
     ./laptop
+    ./games
     ./hyprland.nix
     ./pipewire.nix
     ./sddm.nix
