@@ -30,5 +30,6 @@
   neovim.enable = true;
   bash.enable = true;
   tmux.enable = true;
+  tmux-sessionizer.enable = true;
 
 }

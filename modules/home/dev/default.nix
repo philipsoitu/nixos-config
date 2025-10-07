@@ -6,5 +6,6 @@
     ./neovim
     ./bash.nix
     ./tmux
+    ./scripts
   ];
 }
