@@ -23,6 +23,7 @@
         set -g status-interval 5
         set -g status-right '#{?client_prefix, _ ,}#(timew | awk "/^ *Total/ {print \$NF}") #[bg=green,fg=black,bold]#(timew | awk "/^ *Tracking/ {print \" \" \$NF \" \"}")#[bg=default]'
         set -g status-left "#S"
+        set -g mouse on
 
         bind -n M-1 select-window -t 1
         bind -n M-2 select-window -t 2
