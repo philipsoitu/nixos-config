@@ -10,7 +10,7 @@
       clearDefaultKeybinds = true;
 
       settings = {
-        theme = "GruvboxDark";
+        theme = "Gruvbox Dark";
         background-opacity = 0.7;
 
         font-size = 13;
