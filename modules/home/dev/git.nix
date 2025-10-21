@@ -6,10 +6,12 @@
   config = lib.mkIf config.git.enable {
     programs.git = {
       enable = true;
-      userName = "philipsoitu";
-      userEmail = "philip.soitu@gmail.com";
+      settings = {
+        user = {
+          name = "philipsoitu";
+          email = "philip.soitu@gmail.com";
+        };
 
-      extraConfig = {
         init.defaultBranch = "main";
         core.editor = "nvim";
       };
