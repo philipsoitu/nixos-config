@@ -16,7 +16,7 @@
   printer.enable = true;
 
   laptop.enable = true;
-  rpi-imager.enable = true;
+  rpi-imager.enable = false;
   school.enable = true;
   rustdesk.enable = true;
 }
