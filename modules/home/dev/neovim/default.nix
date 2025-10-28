@@ -4,13 +4,16 @@
   options.neovim.enable = lib.mkEnableOption "Enable neovim";
 
   config = lib.mkIf config.neovim.enable {
+    home.packages = [
+      pkgs.vim
+    ];
     programs.neovim = {
       enable = true;
 
       defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-      vimdiffAlias = true;
+      viAlias = false;
+      vimAlias = false;
+      vimdiffAlias = false;
 
       extraPackages = with pkgs; [
         gcc
