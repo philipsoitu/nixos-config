@@ -13,6 +13,9 @@
         theme = "Gruvbox Dark";
         background-opacity = 0.7;
 
+        font-feature = "-calt, -liga, -dlig";
+
+
         font-size = 13;
         window-inherit-font-size = true;
 
