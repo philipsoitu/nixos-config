@@ -4,36 +4,75 @@
   options.neovim.enable = lib.mkEnableOption "Enable neovim";
 
   config = lib.mkIf config.neovim.enable {
-    home.packages = [
-      pkgs.vim
-    ];
-    programs.neovim = {
+
+    programs.neovim =
+    let
+      toLua = str: "lua << EOF\n${str}\nEOF\n";
+      toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+    in
+    {
       enable = true;
 
       defaultEditor = true;
-      viAlias = false;
-      vimAlias = false;
-      vimdiffAlias = false;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+
+      extraLuaConfig = builtins.readFile ./options.lua;
+
+      plugins = with pkgs.vimPlugins; [
+
+        {
+          plugin = gruvbox;
+          config = "colorscheme gruvbox";
+        }
+
+      ];
 
       extraPackages = with pkgs; [
-        gcc
         wl-clipboard
-
-        #LSPs
-        zls_0_15
-        lua-language-server
-        tinymist
+        ripgrep
       ];
     };
-    home.file.".config/nvim/init.lua".source = ./init.lua;
-    home.file.".config/nvim/lua/config/autocmds.lua".source = ./lua/config/autocmds.lua;
-    home.file.".config/nvim/lua/config/keymaps.lua".source = ./lua/config/keymaps.lua;
-    home.file.".config/nvim/lua/config/lazy.lua".source = ./lua/config/lazy.lua;
-    home.file.".config/nvim/lua/config/options.lua".source = ./lua/config/options.lua;
-    home.file.".config/nvim/lua/plugins/example.lua".source = ./lua/plugins/example.lua;
-    home.file.".config/nvim/lua/plugins/colorscheme.lua".source = ./lua/plugins/colorscheme.lua;
-    home.file.".config/nvim/stylua.toml".source = ./stylua.toml;
   };
 }
+
+
+# {
+#   "blink.cmp": { "branch": "main", "commit": "327fff91fe6af358e990be7be1ec8b78037d2138" },
+#   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
+#   "conform.nvim": { "branch": "master", "commit": "9fd3d5e0b689ec1bf400c53cbbec72c6fdf24081" },
+#   "flash.nvim": { "branch": "main", "commit": "3be9bf7e85550045ec576379a0c45aac144d0438" },
+#   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
+#   "gitsigns.nvim": { "branch": "main", "commit": "20ad4419564d6e22b189f6738116b38871082332" },
+#   "grug-far.nvim": { "branch": "main", "commit": "3e72397465f774b01aa38e4fe8e6eecf23d766d9" },
+#   "gruvbox.nvim": { "branch": "main", "commit": "5e0a460d8e0f7f669c158dedd5f9ae2bcac31437" },
+#   "lazy.nvim": { "branch": "main", "commit": "db067881fff0fd4be8c00e5bde7492e0e1c77a2f" },
+#   "lazydev.nvim": { "branch": "main", "commit": "12532f81ef8aa35dd4a44713ea32e760d643675c" },
+#   "lualine.nvim": { "branch": "master", "commit": "3946f0122255bc377d14a59b27b609fb3ab25768" },
+#   "mason-lspconfig.nvim": { "branch": "main", "commit": "35ec9e1425c2f9a36f556893336af4f302c63214" },
+#   "mason.nvim": { "branch": "main", "commit": "ad7146aa61dcaeb54fa900144d768f040090bff0" },
+#   "mini.ai": { "branch": "main", "commit": "11c57180bc9084089206e211ac7aa598bedc9673" },
+#   "mini.icons": { "branch": "main", "commit": "284798619aed9f4c1ac1b9417b9a5e3b4b85ef3a" },
+#   "mini.pairs": { "branch": "main", "commit": "b9aada8c0e59f2b938e98fbf4eae0799eba96ad9" },
+#   "noice.nvim": { "branch": "main", "commit": "d14d02cb709e3bb2da88363c32f8b4250bced52d" },
+#   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
+#   "nvim-lint": { "branch": "master", "commit": "9da1fb942dd0668d5182f9c8dee801b9c190e2bb" },
+#   "nvim-lspconfig": { "branch": "master", "commit": "2b52bc2190c8efde2e4de02d829a138666774c7c" },
+#   "nvim-treesitter": { "branch": "main", "commit": "645f42e85d8665c91a9911c3896afb57d6b8a923" },
+#   "nvim-treesitter-textobjects": { "branch": "main", "commit": "1b2d85d3de6114c4bcea89ffb2cd1ce9e3a19931" },
+#   "nvim-ts-autotag": { "branch": "main", "commit": "c4ca798ab95b316a768d51eaaaee48f64a4a46bc" },
+#   "persistence.nvim": { "branch": "main", "commit": "51eef57272742b773468949f6bd0503ec3f83874" },
+#   "plenary.nvim": { "branch": "master", "commit": "b9fd5226c2f76c951fc8ed5923d85e4de065e509" },
+#   "snacks.nvim": { "branch": "main", "commit": "e2c1c527e40aecd6d1ac011aef6d3c28a208a9ec" },
+#   "todo-comments.nvim": { "branch": "main", "commit": "19d461ddd543e938eb22505fb03fa878800270b6" },
+#   "tokyonight.nvim": { "branch": "main", "commit": "4fe1b0c44f5d6ee769cdfbdffc7ccb703f53feda" },
+#   "trouble.nvim": { "branch": "main", "commit": "76030c5542c5d132aeeb467ca0ab370f3f79a697" },
+#   "ts-comments.nvim": { "branch": "main", "commit": "217ab9cc137fceb6659b53790bd25e608219abe1" },
+#   "which-key.nvim": { "branch": "main", "commit": "b4177e3eaf15fe5eb8357ebac2286d488be1ed00" }
+# }
+
+
+
 
 

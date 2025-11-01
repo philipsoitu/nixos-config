@@ -2,56 +2,34 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
 -- line number
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.wrap = false
 vim.o.breakindent = true
 
-
--- mouse (ew)
+-- mouse + clipboard
 vim.o.mouse = 'a'
+vim.o.clipboard = "unnamedplus"
 
 
 -- visual
 vim.g.have_nerd_font = true;
 vim.o.termguicolors = true
 
+-- scroll
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 
+-- whitespace
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
-
 -- spacing
-vim.o.tabstop = 4
-
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
 
 -- search
 vim.o.ignorecase = true
 vim.o.smartcase = true
-
-
--- timing
-vim.o.updatetime = 250
-vim.o.timeoutlen = 0
-
-
--- splits
-vim.o.splitright = true
-vim.o.splitbelow = true
-
-
--- others 
-vim.o.swapfile = false
-vim.o.undofile = true
-vim.o.signcolumn = 'yes'
-vim.o.inccommand = 'split'
-vim.o.confirm = true
-
-
-
-
-
