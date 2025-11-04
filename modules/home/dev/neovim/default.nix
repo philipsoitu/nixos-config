@@ -5,12 +5,7 @@
 
   config = lib.mkIf config.neovim.enable {
 
-    programs.neovim =
-    let
-      toLua = str: "lua << EOF\n${str}\nEOF\n";
-      toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-    in
-    {
+    programs.neovim = {
       enable = true;
 
       defaultEditor = true;
@@ -26,18 +21,25 @@
 
         {
           plugin = gruvbox;
-          config = "colorscheme gruvbox";
+          type = "lua";
+          config = ''
+            vim.cmd("colorscheme gruvbox")
+            vim.api.nvim_set_hl(0, "SignColumn", { link = "Normal" })
+          '';
         }
 
         {
           plugin = gitsigns-nvim;
-          config = toLuaFile ./lua/plugins/gitsigns.lua;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/gitsigns.lua;
         }
 
       ];
 
       extraPackages = with pkgs; [
+        xclip
         wl-clipboard
+
         ripgrep
       ];
     };
