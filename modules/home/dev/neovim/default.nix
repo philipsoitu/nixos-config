@@ -18,7 +18,7 @@
       vimAlias = true;
       vimdiffAlias = true;
 
-      extraLuaConfig = builtins.readFile ./options.lua;
+      extraLuaConfig = builtins.readFile ./lua/options.lua;
 
       plugins = with pkgs.vimPlugins; [
 
@@ -29,7 +29,7 @@
 
         {
           plugin = gitsigns-nvim;
-          config = toLuaFile ./lua/gitsigns.lua;
+          config = toLuaFile ./lua/plugins/gitsigns.lua;
         }
 
       ];
