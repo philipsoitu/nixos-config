@@ -29,7 +29,7 @@
 
         {
           plugin = gitsigns-nvim;
-          config = toLuaFile ./plugins/gitsigns.lua;
+          config = toLuaFile ./lua/gitsigns.lua;
         }
 
       ];
