@@ -16,6 +16,7 @@ vim.o.clipboard = "unnamedplus"
 -- visual
 vim.g.have_nerd_font = true;
 vim.o.termguicolors = true
+vim.opt.signcolumn = "yes"
 
 -- scroll
 vim.o.cursorline = true
