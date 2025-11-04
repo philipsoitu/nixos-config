@@ -18,8 +18,10 @@
       vimAlias = true;
       vimdiffAlias = true;
 
-      extraLuaConfig = builtins.readFile ./lua/options.lua;
-
+      extraLuaConfig = ''
+        ${builtins.readFile ./lua/options.lua}
+        ${builtins.readFile ./lua/keymaps.lua}
+      '';
       plugins = with pkgs.vimPlugins; [
 
         {
