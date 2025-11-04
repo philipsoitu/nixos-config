@@ -20,11 +20,16 @@
       plugins = with pkgs.vimPlugins; [
 
         {
-          plugin = gruvbox;
+          plugin = gruvbox-nvim;
           type = "lua";
           config = ''
+            require("gruvbox").setup({
+              contrast = "medium",
+              overrides = {
+                SignColumn = { bg = "#282828" }, -- same as Normal
+              },
+            })
             vim.cmd("colorscheme gruvbox")
-            vim.api.nvim_set_hl(0, "SignColumn", { link = "Normal" })
           '';
         }
 
