@@ -11,7 +11,7 @@
 
       settings = {
         theme = "Gruvbox Dark";
-        background-opacity = 0.7;
+        background-opacity = 0.9;
 
         font-feature = "-calt, -liga, -dlig";
 

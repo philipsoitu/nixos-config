@@ -8,6 +8,7 @@
     ];
 
   hyprland.enable = true;
+  hyprpaper.enable = true;
   pipewire.enable = true;
   sddm.enable = true;
   hyprshot.enable = true;

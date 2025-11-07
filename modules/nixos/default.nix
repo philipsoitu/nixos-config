@@ -6,6 +6,7 @@
     ./laptop
     ./games
     ./hyprland.nix
+    ./hyprpaper.nix
     ./pipewire.nix
     ./sddm.nix
     ./rpi-imager.nix
