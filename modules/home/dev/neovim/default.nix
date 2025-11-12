@@ -50,6 +50,7 @@
         # LSPs
         lua-language-server
         nil
+        tinymist
       ];
     };
   };

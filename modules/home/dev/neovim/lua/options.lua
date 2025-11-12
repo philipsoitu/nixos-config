@@ -40,3 +40,5 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.ttimeoutlen = 50
 
+-- hover border
+vim.o.winborder = "rounded"
