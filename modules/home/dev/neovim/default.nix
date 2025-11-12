@@ -16,7 +16,6 @@
       extraLuaConfig = ''
         ${builtins.readFile ./lua/options.lua}
         ${builtins.readFile ./lua/keymaps.lua}
-        ${builtins.readFile ./lua/lsp.lua}
       '';
       plugins = with pkgs.vimPlugins; [
 
@@ -32,14 +31,13 @@
         {
           plugin = gitsigns-nvim;
           type = "lua";
-          config = builtins.readFile ./lua/plugins/gitsigns.lua;
+          config = builtins.readFile ./lua/gitsigns.lua;
         }
 
         {
           plugin = nvim-lspconfig;
           type = "lua";
-          config = ''
-          '';
+          config = builtins.readFile ./lua/lspconfig.lua;
         }
 
       ];
@@ -49,7 +47,9 @@
 
         ripgrep
 
+        # LSPs
         lua-language-server
+        nil
       ];
     };
   };
@@ -63,8 +63,6 @@
 #   "flash.nvim": { "branch": "main", "commit": "3be9bf7e85550045ec576379a0c45aac144d0438" },
 #   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
 #   "grug-far.nvim": { "branch": "main", "commit": "3e72397465f774b01aa38e4fe8e6eecf23d766d9" },
-#   "lazy.nvim": { "branch": "main", "commit": "db067881fff0fd4be8c00e5bde7492e0e1c77a2f" },
-#   "lazydev.nvim": { "branch": "main", "commit": "12532f81ef8aa35dd4a44713ea32e760d643675c" },
 #   "lualine.nvim": { "branch": "master", "commit": "3946f0122255bc377d14a59b27b609fb3ab25768" },
 #   "mason-lspconfig.nvim": { "branch": "main", "commit": "35ec9e1425c2f9a36f556893336af4f302c63214" },
 #   "mason.nvim": { "branch": "main", "commit": "ad7146aa61dcaeb54fa900144d768f040090bff0" },
