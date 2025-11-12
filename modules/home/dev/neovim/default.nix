@@ -16,6 +16,7 @@
       extraLuaConfig = ''
         ${builtins.readFile ./lua/options.lua}
         ${builtins.readFile ./lua/keymaps.lua}
+        ${builtins.readFile ./lua/netrw.lua}
       '';
       plugins = with pkgs.vimPlugins; [
 
