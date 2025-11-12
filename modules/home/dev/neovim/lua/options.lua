@@ -34,3 +34,9 @@ vim.o.expandtab = true
 -- search
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+-- timeout
+vim.o.timeout = true
+vim.o.timeoutlen = 300
+vim.o.ttimeoutlen = 50
+

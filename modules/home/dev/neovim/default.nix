@@ -23,12 +23,7 @@
           plugin = gruvbox-nvim;
           type = "lua";
           config = ''
-            require("gruvbox").setup({
-              contrast = "medium",
-              overrides = {
-                SignColumn = { bg = "#282828" }, -- same as Normal
-              },
-            })
+            require("gruvbox").setup()
             vim.cmd("colorscheme gruvbox")
           '';
         }
@@ -42,7 +37,6 @@
       ];
 
       extraPackages = with pkgs; [
-        xclip
         wl-clipboard
 
         ripgrep
@@ -59,7 +53,6 @@
 #   "flash.nvim": { "branch": "main", "commit": "3be9bf7e85550045ec576379a0c45aac144d0438" },
 #   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
 #   "grug-far.nvim": { "branch": "main", "commit": "3e72397465f774b01aa38e4fe8e6eecf23d766d9" },
-#   "gruvbox.nvim": { "branch": "main", "commit": "5e0a460d8e0f7f669c158dedd5f9ae2bcac31437" },
 #   "lazy.nvim": { "branch": "main", "commit": "db067881fff0fd4be8c00e5bde7492e0e1c77a2f" },
 #   "lazydev.nvim": { "branch": "main", "commit": "12532f81ef8aa35dd4a44713ea32e760d643675c" },
 #   "lualine.nvim": { "branch": "master", "commit": "3946f0122255bc377d14a59b27b609fb3ab25768" },
