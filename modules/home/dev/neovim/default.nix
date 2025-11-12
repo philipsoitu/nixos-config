@@ -16,6 +16,7 @@
       extraLuaConfig = ''
         ${builtins.readFile ./lua/options.lua}
         ${builtins.readFile ./lua/keymaps.lua}
+        ${builtins.readFile ./lua/lsp.lua}
       '';
       plugins = with pkgs.vimPlugins; [
 
@@ -34,12 +35,21 @@
           config = builtins.readFile ./lua/plugins/gitsigns.lua;
         }
 
+        {
+          plugin = nvim-lspconfig;
+          type = "lua";
+          config = ''
+          '';
+        }
+
       ];
 
       extraPackages = with pkgs; [
         wl-clipboard
 
         ripgrep
+
+        lua-language-server
       ];
     };
   };
