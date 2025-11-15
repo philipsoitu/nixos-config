@@ -16,4 +16,8 @@
   bash.enable = true;
   tmux.enable = true;
   tmux-sessionizer.enable = true;
+
+  home.packages = [
+    pkgs.typst
+  ];
 }
