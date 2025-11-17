@@ -52,6 +52,7 @@
         lua-language-server
         nil
         tinymist
+        pyright
       ];
     };
   };
