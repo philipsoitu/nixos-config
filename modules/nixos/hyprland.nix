@@ -8,5 +8,10 @@
       enable = true;
       xwayland.enable = true;
     };
+
+    environment.systemPackages = [
+      pkgs.xsettingsd
+      pkgs.xorg.xrdb
+    ];
   };
 }
