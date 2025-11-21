@@ -42,6 +42,12 @@
           config = builtins.readFile ./lua/lspconfig.lua;
         }
 
+        {
+          plugin = telescope-nvim;
+          type = "lua";
+          config = builtins.readFile ./lua/telescope.lua;
+        }
+
       ];
 
       extraPackages = with pkgs; [
