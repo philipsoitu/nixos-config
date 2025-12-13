@@ -15,6 +15,7 @@
 
   minecraft.enable = true;
   printer.enable = true;
+  printer-3d.enable = true;
 
   laptop.enable = true;
   rpi-imager.enable = false;

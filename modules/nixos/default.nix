@@ -15,5 +15,6 @@
     ./avahi.nix
     ./hyprshot.nix
     ./printer.nix
+    ./printer-3d.nix
   ];
 }
