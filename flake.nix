@@ -10,6 +10,7 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
+    # sudo nixos-rebuild switch --flake .#framework
     nixosConfigurations = {
       framework = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -20,12 +21,11 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.phil = import ./hosts/framework/home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
         ];
       };
     };
+
     homeConfigurations = {
       ubuntu-wsl = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
