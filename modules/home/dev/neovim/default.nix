@@ -60,6 +60,7 @@
         nil
         tinymist
         pyright
+        zls
       ];
     };
   };

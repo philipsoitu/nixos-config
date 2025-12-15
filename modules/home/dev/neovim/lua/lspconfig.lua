@@ -3,6 +3,7 @@ vim.lsp.enable({
   "nil_ls",
   "tinymist",
   "pyright",
+  "zls",
 
 })
 vim.lsp.config("lua_ls", {
