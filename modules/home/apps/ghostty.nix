@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options.ghostty.enable = lib.mkEnableOption "Enable ghostty";
@@ -15,10 +20,8 @@
 
         font-feature = "-calt, -liga, -dlig";
 
-
         font-size = 13;
         window-inherit-font-size = true;
-
 
         window-padding-balance = true;
         window-padding-x = 0;
@@ -55,4 +58,3 @@
     };
   };
 }
-

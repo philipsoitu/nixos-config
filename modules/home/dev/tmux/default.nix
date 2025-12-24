@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options.tmux.enable = lib.mkEnableOption "Enable tmux";
@@ -40,4 +45,3 @@
     };
   };
 }
-

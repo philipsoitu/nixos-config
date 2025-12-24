@@ -28,9 +28,9 @@ function _G.SimpleTabline()
   for i = 1, total do
     -- Get the filename associated with the tab
     local buflist = vim.fn.tabpagebuflist(i)
-    local winnr  = vim.fn.tabpagewinnr(i)
-    local buf    = buflist[winnr]
-    local name   = vim.fn.fnamemodify(vim.fn.bufname(buf), ":t")
+    local winnr   = vim.fn.tabpagewinnr(i)
+    local buf     = buflist[winnr]
+    local name    = vim.fn.fnamemodify(vim.fn.bufname(buf), ":t")
     if name == "" then name = "[No Name]" end
 
     -- Highlight active tab

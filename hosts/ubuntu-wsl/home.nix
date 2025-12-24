@@ -1,9 +1,9 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
   imports = [
     ../../modules/home
-   ];
+  ];
 
   # The User and Path it manages
   home.username = "phil";

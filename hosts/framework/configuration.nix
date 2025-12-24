@@ -1,11 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../modules/nixos
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/nixos
+  ];
 
   hyprland.enable = true;
   hyprpaper.enable = true;

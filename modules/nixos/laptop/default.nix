@@ -1,7 +1,11 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-
 
   options.laptop.enable = lib.mkEnableOption "Enable laptop specific configurations";
 
@@ -13,7 +17,6 @@
   config = lib.mkIf config.hyprland.enable {
     brightnessctl.enable = true;
     powersaving.enable = true;
-
 
   };
 }

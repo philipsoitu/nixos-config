@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   options.rpi-imager.enable = lib.mkEnableOption "Enable rpi-imager";

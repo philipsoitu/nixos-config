@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options.wallpapers.enable = lib.mkEnableOption "Enable wallpapers";

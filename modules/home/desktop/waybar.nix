@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options.waybar.enable = lib.mkEnableOption "Enable waybar";
@@ -20,7 +25,15 @@
 
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "cpu_text" "cpu" "memory" "battery" "network" "pulseaudio" ];
+        modules-right = [
+          "tray"
+          "cpu_text"
+          "cpu"
+          "memory"
+          "battery"
+          "network"
+          "pulseaudio"
+        ];
 
         "hyprland/workspaces" = {
           disable-scroll = true;

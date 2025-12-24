@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options.hyprpaper.enable = lib.mkEnableOption "Enable hyprpaper";
