@@ -20,8 +20,4 @@
   rpi-imager.enable = false;
   school.enable = true;
   rustdesk.enable = true;
-
-  environment.systemPackages = [
-    pkgs.ollama
-  ];
 }
