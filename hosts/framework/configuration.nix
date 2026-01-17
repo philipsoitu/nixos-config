@@ -20,4 +20,7 @@
   rpi-imager.enable = false;
   school.enable = true;
   rustdesk.enable = true;
+
+  intellij.enable = true;
+
 }
