@@ -14,13 +14,15 @@
 
   minecraft.enable = true;
   printer.enable = true;
-  printer-3d.enable = true;
 
   laptop.enable = true;
-  rpi-imager.enable = false;
   school.enable = true;
   rustdesk.enable = true;
 
   intellij.enable = true;
 
+  environment.systemPackages = [
+    pkgs.code-cursor
+    pkgs.obs-studio
+  ];
 }
