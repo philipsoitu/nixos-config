@@ -4,8 +4,9 @@ vim.lsp.enable({
   "tinymist",
   "pyright",
   "zls",
-
+  "clangd",
 })
+
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {

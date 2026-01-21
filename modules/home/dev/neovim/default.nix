@@ -72,6 +72,7 @@
         tinymist
         pyright
         zls
+        clang-tools
       ];
     };
   };
