@@ -5,6 +5,7 @@ vim.lsp.enable({
   "pyright",
   "zls",
   "clangd",
+  "svelte",
 })
 
 vim.lsp.config("lua_ls", {

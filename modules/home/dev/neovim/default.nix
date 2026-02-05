@@ -73,6 +73,7 @@
         pyright
         zls
         clang-tools
+        svelte-language-server
       ];
     };
   };
