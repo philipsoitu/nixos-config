@@ -25,4 +25,23 @@
     pkgs.code-cursor
     pkgs.obs-studio
   ];
+
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  hardware.graphics.enable = true;
+
+  services.ollama = {
+    enable = true;
+
+    package = pkgs.ollama-vulkan;
+
+    loadModels = [
+      "qwen2.5:3b"
+      "nomic-embed-text"
+    ];
+
+    environmentVariables = {
+      OLLAMA_VULKAN = "1";
+    };
+  };
+
 }
