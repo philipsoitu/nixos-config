@@ -3,7 +3,12 @@
 if [[ $# -eq 1 ]]; then
   selected=$1
 else
-  selected=$(find ~/code ~/McGill/W26 -mindepth 1 -maxdepth 1 -type d | fzf)
+  selected=$(
+    printf "%s\n" \
+      "$HOME/nixos-config" \
+      $(find ~/code ~/McGill/W26 -mindepth 1 -maxdepth 1 -type d) \
+      | fzf
+    )
 fi
 
 if [[ -z $selected ]]; then
