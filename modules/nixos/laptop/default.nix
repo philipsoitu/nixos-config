@@ -6,7 +6,6 @@
 }:
 
 {
-
   options.laptop.enable = lib.mkEnableOption "Enable laptop specific configurations";
 
   imports = [
@@ -14,9 +13,8 @@
     ./powersaving.nix
   ];
 
-  config = lib.mkIf config.hyprland.enable {
-    brightnessctl.enable = true;
-    powersaving.enable = true;
-
+  config = lib.mkIf config.laptop.enable {
+    brightnessctl.enable = lib.mkDefault true;
+    powersaving.enable = lib.mkDefault true;
   };
 }
