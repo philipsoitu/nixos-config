@@ -16,7 +16,7 @@
 
     environment.systemPackages = [
       pkgs.xsettingsd
-      pkgs.xorg.xrdb
+      pkgs.xrdb
     ];
   };
 }
