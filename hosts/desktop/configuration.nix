@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -70,10 +70,13 @@
   users.users.phil = {
     isNormalUser = true;
     description = "phil";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -86,8 +89,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -121,4 +124,23 @@
     "nix-command"
     "flakes"
   ];
+
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  hardware.graphics.enable = true;
+
+  services.ollama = {
+    enable = true;
+
+    package = pkgs.ollama-vulkan;
+
+    loadModels = [
+      "qwen2.5:3b"
+      "nomic-embed-text"
+    ];
+
+    environmentVariables = {
+      OLLAMA_VULKAN = "1";
+    };
+  };
+
 }
