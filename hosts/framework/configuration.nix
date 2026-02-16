@@ -37,6 +37,9 @@
     loadModels = [
       "qwen2.5:3b"
       "nomic-embed-text"
+      "qwen3-embedding:0.6b"
+      "qwen3:4b"
+      "qwen3:8b"
     ];
 
     environmentVariables = {
