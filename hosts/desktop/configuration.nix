@@ -89,8 +89,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
+    orca-slicer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -141,6 +140,12 @@
     environmentVariables = {
       OLLAMA_VULKAN = "1";
     };
+  };
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true; # enables .local resolution
+    openFirewall = true;
   };
 
 }
