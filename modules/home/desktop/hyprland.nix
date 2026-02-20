@@ -259,30 +259,6 @@
 
       # Example windowrule
       # windowrule = float,class:^(kitty)$,title:^(kitty)$
-
-      # Ignore maximize requests from apps. You'll probably like this.
-      windowrule = suppressevent maximize, class:.*
-
-      # Fix some dragging issues with XWayland
-      windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
-
-      windowrulev2 = float, title:^(Picture-in-Picture)$
-      windowrulev2 = pin, title:^(Picture-in-Picture)$
-      windowrulev2 = size 800 450, title:^(Picture-in-Picture)$
-
-      # Firefox save/open dialogs issue fix
-      windowrulev2 = float, title:^(Open File|Save As|Save File|Choose File)$
-      windowrulev2 = center, title:^(Open File|Save As|Save File|Choose File)$
-      windowrulev2 = size 900 600, title:^(Open File|Save As|Save File|Choose File)$
-
-      # Logisim Evolution weird window behavior fix
-      # Catch all Logisim windows
-      windowrulev2 = float, class:^(com-cburch-logisim-Main)$
-
-      # Force size + position of the main application window
-      windowrulev2 = center, title:^(main of .* · Logisim-evolution.*)$
-      windowrulev2 = size 1000 700, title:^(main of .* · Logisim-evolution.*)$
-      windowrulev2 = move 100 100, title:^(main of .* · Logisim-evolution.*)$
     '';
   };
 }
