@@ -31,5 +31,6 @@
   bash.enable = true;
   tmux.enable = true;
   tmux-sessionizer.enable = true;
+  unfuck-bluetooth.enable = true;
 
 }
