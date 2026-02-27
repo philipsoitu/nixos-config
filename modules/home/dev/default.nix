@@ -7,5 +7,6 @@
     ./bash.nix
     ./tmux
     ./scripts
+    ./codex.nix
   ];
 }
