@@ -8,7 +8,7 @@
   # The User and Path it manages
   home.username = "phil";
   home.homeDirectory = "/home/phil";
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 
   # terminal apps
   git.enable = true;
