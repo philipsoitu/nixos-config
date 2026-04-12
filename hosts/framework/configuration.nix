@@ -24,6 +24,8 @@
   environment.systemPackages = [
     pkgs.code-cursor
     pkgs.obs-studio
+    pkgs.openconnect
+    pkgs.bambu-studio
   ];
 
   boot.initrd.kernelModules = [ "amdgpu" ];
