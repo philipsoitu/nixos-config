@@ -17,7 +17,7 @@
 
   laptop.enable = true;
   school.enable = true;
-  rustdesk.enable = true;
+  rustdesk.enable = false;
 
   intellij.enable = true;
 
