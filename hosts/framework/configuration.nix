@@ -19,15 +19,6 @@
   school.enable = true;
   rustdesk.enable = false;
 
-  intellij.enable = true;
-
-  environment.systemPackages = [
-    pkgs.code-cursor
-    pkgs.obs-studio
-    pkgs.openconnect
-    pkgs.bambu-studio
-  ];
-
   boot.initrd.kernelModules = [ "amdgpu" ];
   hardware.graphics.enable = true;
 

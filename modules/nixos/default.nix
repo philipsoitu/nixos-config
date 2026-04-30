@@ -14,6 +14,5 @@
     ./avahi.nix
     ./hyprshot.nix
     ./printer.nix
-    ./intellij.nix
   ];
 }
