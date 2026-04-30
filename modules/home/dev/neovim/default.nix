@@ -27,11 +27,11 @@
       plugins = with pkgs.vimPlugins; [
 
         {
-          plugin = gruvbox-nvim;
+          plugin = rose-pine;
           type = "lua";
           config = ''
-            require("gruvbox").setup()
-            vim.cmd("colorscheme gruvbox")
+            require("rose-pine").setup()
+            vim.cmd("colorscheme rose-pine")
           '';
         }
 
