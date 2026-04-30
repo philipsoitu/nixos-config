@@ -15,7 +15,7 @@
       clearDefaultKeybinds = true;
 
       settings = {
-        theme = "Gruvbox Dark";
+        theme = "Rose Pine Moon";
         background-opacity = 0.9;
 
         font-feature = "-calt, -liga, -dlig";
