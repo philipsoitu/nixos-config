@@ -1,5 +1,14 @@
 { self, inputs, ... }:
 {
+
+  flake.nixosModules.ghostty =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = [
+        self.packages.${pkgs.stdenv.hostPlatform.system}.ghostty
+      ];
+    };
+
   perSystem =
     { pkgs, lib, ... }:
     let

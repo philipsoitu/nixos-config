@@ -165,7 +165,7 @@
         ];
 
         runtimeInputs = with pkgs; [
-          waybar
+          self.packages.${pkgs.stdenv.hostPlatform.system}.waybar
           self.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper
           dunst
           ghostty

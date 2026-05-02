@@ -8,6 +8,7 @@
       imports = [
         self.nixosModules.frameworkHardware
         self.nixosModules.desktop
+        self.nixosModules.ghostty
       ];
 
       # Bootloader.
@@ -37,7 +38,10 @@
           "networkmanager"
           "wheel"
         ];
-        packages = with pkgs; [ ];
+        packages = with pkgs; [
+          firefox
+          wofi
+        ];
       };
 
       # for build-vm
