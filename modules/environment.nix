@@ -5,6 +5,7 @@
     {
       imports = [
         self.nixosModules.git
+        self.nixosModules.neovim
       ];
     };
 
@@ -16,6 +17,7 @@
 
         runtimeInputs = [
           self.packages.${pkgs.stdenv.hostPlatform.system}.git
+          self.packages.${pkgs.stdenv.hostPlatform.system}.neovim
         ];
 
         text = ''
