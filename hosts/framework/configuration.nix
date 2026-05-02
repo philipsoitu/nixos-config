@@ -8,6 +8,7 @@
       imports = [
         self.nixosModules.frameworkHardware
         self.nixosModules.desktop
+        self.nixosModules.environment
         self.nixosModules.ghostty
       ];
 
