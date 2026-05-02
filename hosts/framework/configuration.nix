@@ -7,9 +7,7 @@
     {
       imports = [
         self.nixosModules.frameworkHardware
-        self.nixosModules.hyprland
-        self.nixosModules.hyprpaper
-        self.nixosModules.sddm
+        self.nixosModules.desktop
       ];
 
       # Bootloader.
