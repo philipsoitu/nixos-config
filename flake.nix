@@ -11,7 +11,12 @@
 
   outputs =
     inputs:
+    let
+      modules = inputs.import-tree ./modules;
+      hosts = inputs.import-tree ./hosts;
+    in
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = (inputs.import-tree ./modules).imports ++ (inputs.import-tree ./hosts).imports;
+      imports = modules.imports ++ hosts.imports;
     };
+
 }
