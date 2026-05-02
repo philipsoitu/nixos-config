@@ -166,7 +166,7 @@
 
         runtimeInputs = with pkgs; [
           waybar
-          hyprpaper
+          self.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper
           dunst
           ghostty
           kdePackages.dolphin
