@@ -8,6 +8,7 @@
       imports = [
         self.nixosModules.frameworkHardware
         self.nixosModules.hyprland
+        self.nixosModules.sddm
       ];
 
       # Bootloader.
