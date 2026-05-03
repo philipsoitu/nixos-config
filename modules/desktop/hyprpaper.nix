@@ -11,7 +11,7 @@
   perSystem =
     { pkgs, ... }:
     let
-      lakeWallpaper = ./../../wallpapers/others/lake.jpg;
+      lakeWallpaper = "${self.packages.${pkgs.stdenv.hostPlatform.system}.wallpapers}/share/wallpapers/lake.jpg";
       hyprpaperConfig = pkgs.writeText "hyprpaper.conf" ''
         preload = ${lakeWallpaper}
 
