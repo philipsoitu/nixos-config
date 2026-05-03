@@ -16,6 +16,6 @@
         ln -s ${./../../wallpapers/others/lake.jpg} "$out/share/wallpapers/lake.jpg"
         ln -s ${./../../wallpapers/others/berries.jpg} "$out/share/wallpapers/berries.jpg"
         ln -s ${./../../wallpapers/others/mushroom.jpg} "$out/share/wallpapers/mushroom.jpg"
-      };
+      '';
     };
 }
