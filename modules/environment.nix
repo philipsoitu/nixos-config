@@ -6,6 +6,7 @@
       imports = [
         self.nixosModules.git
         self.nixosModules.neovim
+        self.nixosModules.tmux
       ];
     };
 
@@ -18,6 +19,7 @@
         runtimeInputs = [
           self.packages.${pkgs.stdenv.hostPlatform.system}.git
           self.packages.${pkgs.stdenv.hostPlatform.system}.neovim
+          self.packages.${pkgs.stdenv.hostPlatform.system}.tmux
         ];
 
         text = ''
