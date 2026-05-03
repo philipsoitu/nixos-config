@@ -8,6 +8,7 @@
         self.nixosModules.hyprland
         self.nixosModules.hyprpaper
         self.nixosModules.waybar
+        self.nixosModules.wofi
         self.nixosModules.sddm
       ];
     };

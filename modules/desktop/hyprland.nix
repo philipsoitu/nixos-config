@@ -170,7 +170,7 @@
           self.packages.${pkgs.stdenv.hostPlatform.system}.dunst
           ghostty
           kdePackages.dolphin
-          wofi
+          self.packages.${pkgs.stdenv.hostPlatform.system}.wofi
           hyprshot
           wireplumber
           brightnessctl
