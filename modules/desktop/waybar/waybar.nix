@@ -6,6 +6,10 @@
       environment.systemPackages = [
         self.packages.${pkgs.stdenv.hostPlatform.system}.waybar
       ];
+
+      fonts.packages = [
+        pkgs.nerd-fonts.jetbrains-mono
+      ];
     };
 
   perSystem =
