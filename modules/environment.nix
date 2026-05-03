@@ -28,6 +28,7 @@
         runtimeInputs = [
 
           pkgs.codex
+          pkgs.typst
 
           self'.packages.neovim
           self'.packages.tmux
