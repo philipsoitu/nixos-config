@@ -43,6 +43,7 @@
         isNormalUser = true;
         description = "phil";
         extraGroups = [
+          "disk"
           "networkmanager"
           "wheel"
         ];
@@ -64,6 +65,12 @@
         "nix-command"
         "flakes"
       ];
+
+      boot.initrd.kernelModules = [ "amdgpu" ];
+      hardware.graphics.enable = true;
+
+      hardware.bluetooth.enable = true;
+      services.blueman.enable = true;
 
     };
 
