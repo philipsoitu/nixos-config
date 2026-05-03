@@ -12,6 +12,7 @@
         self.nixosModules.firefox
         self.nixosModules.ghostty
         self.nixosModules.avahi
+        self.nixosModules.minecraft
         self.nixosModules.pipewire
         self.nixosModules.printer
         self.nixosModules.school
