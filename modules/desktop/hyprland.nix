@@ -165,6 +165,7 @@
         ];
 
         runtimeInputs = with pkgs; [
+          pkgs.brightnessctl
           self.packages.${pkgs.stdenv.hostPlatform.system}.waybar
           self.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper
           self.packages.${pkgs.stdenv.hostPlatform.system}.dunst
@@ -173,7 +174,6 @@
           self.packages.${pkgs.stdenv.hostPlatform.system}.wofi
           self.packages.${pkgs.stdenv.hostPlatform.system}.hyprshot
           wireplumber
-          self.packages.${pkgs.stdenv.hostPlatform.system}.brightnessctl
           playerctl
         ];
       };
