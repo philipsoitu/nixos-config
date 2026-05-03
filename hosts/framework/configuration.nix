@@ -30,6 +30,10 @@
       networking.hostName = "framework";
       networking.networkmanager.enable = true;
 
+      # Printer
+      services.printing.enable = true;
+      services.printing.drivers = [ pkgs.brlaser ];
+
       # Time and Language
       time.timeZone = "America/Toronto";
       i18n.defaultLocale = "en_CA.UTF-8";
