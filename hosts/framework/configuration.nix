@@ -34,6 +34,11 @@
       services.printing.enable = true;
       services.printing.drivers = [ pkgs.brlaser ];
 
+      # Packages
+      environment.systemPackages = [
+        pkgs.brightnessctl
+      ];
+
       # Time and Language
       time.timeZone = "America/Toronto";
       i18n.defaultLocale = "en_CA.UTF-8";
