@@ -9,6 +9,7 @@
     { ... }:
     {
       imports = [
+        self.nixosModules.bash
         self.nixosModules.git
         self.nixosModules.neovim
         self.nixosModules.tmux
@@ -22,17 +23,18 @@
       packages.environment = inputs.wrappers.lib.wrapPackage {
         inherit pkgs;
 
-        package = pkgs.bash;
+        package = self'.packages.bash;
 
         runtimeInputs = [
-          self'.packages.git
           self'.packages.neovim
           self'.packages.tmux
           self'.packages.tmux-sessionizer
+          self'.packages.git
         ];
 
         env = {
           EDITOR = lib.getExe self'.packages.neovim;
+          SHELL = lib.getExe self'.packages.bash;
         };
 
       };
