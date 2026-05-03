@@ -9,7 +9,7 @@
     };
 
   perSystem =
-    { pkgs, ... }:
+    { pkgs, self', ... }:
     let
       bashrc = pkgs.writeText "bashrc" ''
         PS1="\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
@@ -21,7 +21,7 @@
         name = "bash";
 
         runtimeInputs = [
-          self.packages.${pkgs.stdenv.hostPlatform.system}.tmux-sessionizer
+          self'.packages.tmux-sessionizer
         ];
 
         text = ''
