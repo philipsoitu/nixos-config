@@ -173,7 +173,7 @@
           self.packages.${pkgs.stdenv.hostPlatform.system}.wofi
           self.packages.${pkgs.stdenv.hostPlatform.system}.hyprshot
           wireplumber
-          brightnessctl
+          self.packages.${pkgs.stdenv.hostPlatform.system}.brightnessctl
           playerctl
         ];
       };
