@@ -11,6 +11,7 @@
         self.nixosModules.environment
         self.nixosModules.ghostty
         self.nixosModules.pipewire
+        self.nixosModules.printer
         self.nixosModules.school
       ];
 
