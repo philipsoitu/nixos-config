@@ -13,11 +13,23 @@
     let
       lakeWallpaper = "${self.packages.${pkgs.stdenv.hostPlatform.system}.wallpapers}/share/wallpapers/lake.jpg";
       hyprpaperConfig = pkgs.writeText "hyprpaper.conf" ''
-        preload = ${lakeWallpaper}
+        ipc = true
+        splash = false
 
-        wallpaper = eDP-1,${lakeWallpaper}
-        wallpaper = DP-2,${lakeWallpaper}
-        wallpaper = HDMI-A-1,${lakeWallpaper}
+        wallpaper {
+          monitor = eDP-1
+          path = ${lakeWallpaper}
+        }
+
+        wallpaper {
+          monitor = DP-2
+          path = ${lakeWallpaper}
+        }
+
+        wallpaper {
+          monitor = HDMI-A-1
+          path = ${lakeWallpaper}
+        }
       '';
     in
     {

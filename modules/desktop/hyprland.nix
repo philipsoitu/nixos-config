@@ -4,11 +4,10 @@
     {
       pkgs,
       lib,
-      self',
       ...
     }:
     let
-      hyprlandConfig = self.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      hyprlandConfig = self.packages.${pkgs.stdenv.hostPlatform.system}.hyprland-config;
     in
     {
       programs.hyprland = {
