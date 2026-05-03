@@ -9,6 +9,9 @@
   perSystem =
     { pkgs, ... }:
     {
-      packages.firefox = pkgs.firefox;
+      packages.firefox = inputs.wrappers.lib.wrapPackage {
+        inherit pkgs;
+        package = pkgs.firefox;
+      };
     };
 }
