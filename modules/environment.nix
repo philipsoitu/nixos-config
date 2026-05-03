@@ -1,4 +1,9 @@
-{ self, inputs, ... }:
+{
+  lib,
+  self,
+  inputs,
+  ...
+}:
 {
   flake.nixosModules.environment =
     { ... }:
@@ -7,25 +12,29 @@
         self.nixosModules.git
         self.nixosModules.neovim
         self.nixosModules.tmux
+        self.nixosModules.tmux-sessionizer
       ];
     };
 
   perSystem =
-    { pkgs, ... }:
+    { pkgs, self', ... }:
     {
-      packages.environment = pkgs.writeShellApplication {
-        name = "environment";
+      packages.environment = inputs.wrappers.lib.wrapPackage {
+        inherit pkgs;
+
+        package = pkgs.bash;
 
         runtimeInputs = [
-          self.packages.${pkgs.stdenv.hostPlatform.system}.git
-          self.packages.${pkgs.stdenv.hostPlatform.system}.neovim
-          self.packages.${pkgs.stdenv.hostPlatform.system}.tmux
+          self'.packages.git
+          self'.packages.neovim
+          self'.packages.tmux
+          self'.packages.tmux-sessionizer
         ];
 
-        text = ''
-          shell="''${SHELL:-${pkgs.bashInteractive}/bin/bash}"
-          exec "$shell" -i
-        '';
+        env = {
+          EDITOR = lib.getExe self'.packages.neovim;
+        };
+
       };
     };
 }
