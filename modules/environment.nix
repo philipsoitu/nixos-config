@@ -10,7 +10,6 @@
     {
       imports = [
         self.nixosModules.bash
-        self.nixosModules.codex
         self.nixosModules.git
         self.nixosModules.neovim
         self.nixosModules.tmux
@@ -28,11 +27,13 @@
         package = self'.packages.bash;
 
         runtimeInputs = [
+
+          pkgs.codex
+
           self'.packages.neovim
           self'.packages.tmux
           self'.packages.tmux-sessionizer
           self'.packages.unfuck-bluetooth
-          self'.packages.codex
           self'.packages.git
         ];
 
