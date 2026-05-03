@@ -8,7 +8,7 @@
       ...
     }:
     let
-      hyprlandConfig = self'.packages.hyprland-config;
+      hyprlandConfig = self.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     in
     {
       programs.hyprland = {
