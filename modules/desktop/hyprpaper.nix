@@ -11,7 +11,14 @@
   perSystem =
     { pkgs, ... }:
     let
-      lakeWallpaper = "${self.packages.${pkgs.stdenv.hostPlatform.system}.wallpapers}/share/wallpapers/lake.jpg";
+      wallpapers = pkgs.runCommand "hyprpaper-wallpapers" { } ''
+        mkdir -p "$out/share/wallpapers"
+        ln -s ${./../../wallpapers/others/lake.jpg} "$out/share/wallpapers/lake.jpg"
+        ln -s ${./../../wallpapers/others/berries.jpg} "$out/share/wallpapers/berries.jpg"
+        ln -s ${./../../wallpapers/others/mushroom.jpg} "$out/share/wallpapers/mushroom.jpg"
+      '';
+
+      lakeWallpaper = "${wallpapers}/share/wallpapers/lake.jpg";
       hyprpaperConfig = pkgs.writeText "hyprpaper.conf" ''
         ipc = true
         splash = false

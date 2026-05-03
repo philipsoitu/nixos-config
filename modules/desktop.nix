@@ -8,7 +8,6 @@
         self.nixosModules.hyprland
         self.nixosModules.hyprpaper
         self.nixosModules.hyprshot
-        self.nixosModules.wallpapers
         self.nixosModules.waybar
         self.nixosModules.wofi
         self.nixosModules.sddm
