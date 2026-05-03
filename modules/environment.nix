@@ -6,7 +6,7 @@
 }:
 {
   flake.nixosModules.environment =
-    { ... }:
+    { pkgs, ... }:
     {
       imports = [
         self.nixosModules.bash
@@ -14,6 +14,11 @@
         self.nixosModules.neovim
         self.nixosModules.tmux
         self.nixosModules.tmux-sessionizer
+      ];
+
+      environment.systemPackages = with pkgs; [
+        codex
+        typst
       ];
     };
 
