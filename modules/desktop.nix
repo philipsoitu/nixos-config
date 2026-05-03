@@ -4,6 +4,7 @@
     { ... }:
     {
       imports = [
+        self.nixosModules.dunst
         self.nixosModules.hyprland
         self.nixosModules.hyprpaper
         self.nixosModules.waybar

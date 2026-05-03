@@ -167,7 +167,7 @@
         runtimeInputs = with pkgs; [
           self.packages.${pkgs.stdenv.hostPlatform.system}.waybar
           self.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper
-          dunst
+          self.packages.${pkgs.stdenv.hostPlatform.system}.dunst
           ghostty
           kdePackages.dolphin
           wofi
