@@ -10,6 +10,7 @@
         self.nixosModules.desktop
         self.nixosModules.environment
         self.nixosModules.ghostty
+        self.nixosModules.avahi
         self.nixosModules.pipewire
         self.nixosModules.printer
         self.nixosModules.school
