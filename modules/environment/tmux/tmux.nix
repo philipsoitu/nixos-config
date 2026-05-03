@@ -13,8 +13,8 @@
     let
       tmuxConfig = pkgs.writeText "tmux.conf" ''
         unbind C-b
-        set -g prefix Space
-        bind Space send-prefix
+        set -g prefix C-Space
+        bind C-Space send-prefix
 
         set -g default-terminal "tmux-256color"
         set -g base-index 1
