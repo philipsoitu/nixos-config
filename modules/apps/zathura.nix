@@ -1,5 +1,13 @@
 { self, inputs, ... }:
 {
+  flake.nixosModules.zathura =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = [
+        self.packages.${pkgs.stdenv.hostPlatform.system}.zathura
+      ];
+    };
+
   perSystem =
     { pkgs, self', ... }:
     {
