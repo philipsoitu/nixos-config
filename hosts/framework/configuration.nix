@@ -9,6 +9,7 @@
         self.nixosModules.frameworkHardware
         self.nixosModules.desktop
         self.nixosModules.environment
+        self.nixosModules.firefox
         self.nixosModules.ghostty
         self.nixosModules.avahi
         self.nixosModules.pipewire
@@ -44,7 +45,6 @@
           "wheel"
         ];
         packages = with pkgs; [
-          firefox
           wofi
         ];
       };
