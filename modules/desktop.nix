@@ -16,8 +16,8 @@
     };
 
   perSystem =
-    { pkgs, ... }:
+    { pkgs, self', ... }:
     {
-      packages.desktop = self.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      packages.desktop = self'.hyprland;
     };
 }
