@@ -171,7 +171,7 @@
           ghostty
           kdePackages.dolphin
           self.packages.${pkgs.stdenv.hostPlatform.system}.wofi
-          hyprshot
+          self.packages.${pkgs.stdenv.hostPlatform.system}.hyprshot
           wireplumber
           brightnessctl
           playerctl
