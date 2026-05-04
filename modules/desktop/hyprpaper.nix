@@ -16,7 +16,7 @@
         cp -r ${./../../wallpapers} "$out/share/wallpapers"
       '';
 
-      currentWallpaper = "${wallpapers}/share/wallpapers/rose-pine/gruvbox-nix.png";
+      currentWallpaper = "${wallpapers}/share/wallpapers/rose-pine/forest-5.jpg";
       hyprpaperConfig = pkgs.writeText "hyprpaper.conf" ''
         ipc = true
         splash = false
