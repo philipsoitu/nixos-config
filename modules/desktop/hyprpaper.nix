@@ -12,30 +12,28 @@
     { pkgs, ... }:
     let
       wallpapers = pkgs.runCommand "hyprpaper-wallpapers" { } ''
-        mkdir -p "$out/share/wallpapers"
-        ln -s ${./../../wallpapers/others/lake.jpg} "$out/share/wallpapers/lake.jpg"
-        ln -s ${./../../wallpapers/others/berries.jpg} "$out/share/wallpapers/berries.jpg"
-        ln -s ${./../../wallpapers/others/mushroom.jpg} "$out/share/wallpapers/mushroom.jpg"
+        mkdir -p "$out/share"
+        cp -r ${./../../wallpapers} "$out/share/wallpapers"
       '';
 
-      lakeWallpaper = "${wallpapers}/share/wallpapers/lake.jpg";
+      currentWallpaper = "${wallpapers}/share/wallpapers/rose-pine/gruvbox-nix.png";
       hyprpaperConfig = pkgs.writeText "hyprpaper.conf" ''
         ipc = true
         splash = false
 
         wallpaper {
           monitor = eDP-1
-          path = ${lakeWallpaper}
+          path = ${currentWallpaper}
         }
 
         wallpaper {
           monitor = DP-2
-          path = ${lakeWallpaper}
+          path = ${currentWallpaper}
         }
 
         wallpaper {
           monitor = HDMI-A-1
-          path = ${lakeWallpaper}
+          path = ${currentWallpaper}
         }
       '';
     in
