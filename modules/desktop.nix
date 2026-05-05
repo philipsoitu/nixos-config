@@ -5,6 +5,7 @@
     {
       imports = [
         self.nixosModules.dunst
+        self.nixosModules.hyprcursor
         self.nixosModules.hyprland
         self.nixosModules.hyprpaper
         self.nixosModules.hyprshot
