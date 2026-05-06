@@ -191,3 +191,9 @@ tooltip {
     padding: 0px 5px;
     transition: all .3s ease; 
 }
+
+#pulseaudio {
+    min-height: 18px;
+    margin: 4px 4px 4px 0;
+    padding: 1px 6px;
+}
