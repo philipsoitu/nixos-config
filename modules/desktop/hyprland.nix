@@ -36,8 +36,8 @@
         env = HYPRCURSOR_SIZE,24
 
         general {
-            gaps_in = 2
-            gaps_out = 4
+            gaps_in = 1
+            gaps_out = 2
             border_size = 2
             col.active_border = rgba(3e8fb0aa) rgba(eb6f92aa) 45deg
             col.inactive_border = rgba(595959aa)
@@ -47,7 +47,7 @@
         }
 
         decoration {
-            rounding = 0
+            rounding = 5
             active_opacity = 1.0
             inactive_opacity = 1.0
 
@@ -66,9 +66,8 @@
             }
         }
 
-        animations {
-            enabled = 0
-        }
+        bezier = snappy, 0.25, 1.5, 0.5, 1
+        animation = windows, 1, 3, snappy
 
         dwindle {
             pseudotile = true
