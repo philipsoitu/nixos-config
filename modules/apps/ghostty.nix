@@ -13,8 +13,23 @@
     { pkgs, lib, ... }:
     let
       ghosttyConfig = pkgs.writeText "ghostty-config" ''
-        theme = Rose Pine Moon
-        background-opacity = 0.9
+        palette =  0 = ${self.theme.base02}
+        palette =  1 = ${self.theme.base06}
+        palette =  2 = ${self.theme.base09}
+        palette =  3 = ${self.theme.base07}
+        palette =  4 = ${self.theme.base0A}
+        palette =  5 = ${self.theme.base0B}
+        palette =  6 = ${self.theme.base08}
+        palette =  7 = ${self.theme.base05}
+        palette =  8 = ${self.theme.base03}
+        palette =  9 = ${self.theme.base06}
+        palette = 10 = ${self.theme.base09}
+        palette = 11 = ${self.theme.base07}
+        palette = 12 = ${self.theme.base0A}
+        palette = 13 = ${self.theme.base0B}
+        palette = 14 = ${self.theme.base08}
+        palette = 15 = ${self.theme.base05}
+        background-opacity = 1.0
 
         font-feature = -calt, -liga, -dlig
 
