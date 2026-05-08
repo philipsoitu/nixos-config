@@ -69,6 +69,7 @@
             ${pkgs.ttyd}/bin/ttyd \
               --interface 127.0.0.1 \
               --port 7681 \
+              --writable \
               ${pkgs.bash}/bin/bash
           '';
 
