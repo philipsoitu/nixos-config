@@ -55,9 +55,60 @@
       # Allow unfree packages
       nixpkgs.config.allowUnfree = true;
 
-      # List packages installed in system profile. To search, run:
-      # $ nix search wget
       environment.systemPackages = with pkgs; [
+        ttyd
+      ];
+
+      systemd.services.ttyd = {
+        description = "Browser terminal";
+
+        wantedBy = [ "multi-user.target" ];
+
+        serviceConfig = {
+          ExecStart = ''
+            ${pkgs.ttyd}/bin/ttyd \
+              --interface 127.0.0.1 \
+              --port 7681 \
+              tmux new -A -s main
+          '';
+
+          Restart = "always";
+
+          User = "YOUR_USERNAME";
+        };
+      };
+
+      services.nginx = {
+        enable = true;
+
+        recommendedProxySettings = true;
+        recommendedTlsSettings = true;
+
+        virtualHosts."shellbox.soitu.ca" = {
+          forceSSL = true;
+          enableACME = true;
+
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:7681";
+
+            proxyWebsockets = true;
+
+            extraConfig = ''
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+            '';
+          };
+        };
+      };
+
+      security.acme = {
+        acceptTerms = true;
+        defaults.email = "philip.soitu@gmail.com";
+      };
+
+      networking.firewall.allowedTCPPorts = [
+        80
+        443
       ];
 
       # Some programs need SUID wrappers, can be configured further or are
