@@ -36,6 +36,11 @@
         variant = "";
       };
 
+      nix.settings.experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+
       # Define a user account. Don't forget to set a password with ‘passwd’.
       users.users.phil = {
         isNormalUser = true;
