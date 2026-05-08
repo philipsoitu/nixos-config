@@ -69,7 +69,7 @@
             ${pkgs.ttyd}/bin/ttyd \
               --interface 127.0.0.1 \
               --port 7681 \
-              tmux new -A -s main
+              ${pkgs.bash}/bin/bash
           '';
 
           Restart = "always";
