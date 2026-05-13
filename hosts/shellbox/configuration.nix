@@ -56,6 +56,7 @@
       nixpkgs.config.allowUnfree = true;
 
       environment.systemPackages = with pkgs; [
+        self.packages.${pkgs.stdenv.hostPlatform.system}.bun-old-cpu
         ttyd
       ];
 
