@@ -27,6 +27,8 @@
       services.printing.enable = true;
       services.printing.drivers = [ pkgs.brlaser ];
 
+      services.tailscale.enable = true;
+
       # Packages
       environment.systemPackages = [
         pkgs.brightnessctl
