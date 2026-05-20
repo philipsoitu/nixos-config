@@ -29,7 +29,7 @@
         palette = 13 = ${self.theme.base0B}
         palette = 14 = ${self.theme.base08}
         palette = 15 = ${self.theme.base05}
-        background-opacity = 1.0
+        background-opacity = 0.8
 
         font-feature = -calt, -liga, -dlig
 
