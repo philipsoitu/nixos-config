@@ -15,8 +15,8 @@
   perSystem =
     { pkgs, ... }:
     let
-      waybarConfig = pkgs.writeText "waybar-config.jsonc" (builtins.readFile ./waybar-config.jsonc);
-      waybarStyle = pkgs.writeText "waybar-style.css" (builtins.readFile ./waybar-style.css);
+      waybarConfig = pkgs.writeText "waybar-config.jsonc" (builtins.readFile self.theme.waybarConfig);
+      waybarStyle = pkgs.writeText "waybar-style.css" (builtins.readFile self.theme.waybarStyle);
     in
     {
       packages.waybar = inputs.wrappers.lib.wrapPackage {

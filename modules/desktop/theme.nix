@@ -1,12 +1,16 @@
 let
-  theme = rose-pine-theme;
+  theme = rose-pine;
 
-  rose-pine-theme = {
+  rose-pine = {
     ghostty = "Rose Pine Moon";
+    waybarConfig = ./waybar/rose-pine/config.jsonc;
+    waybarStyle = ./waybar/rose-pine/style.css;
   };
 
-  gruvbox-theme = {
+  gruvbox = {
     ghostty = "Gruvbox Dark";
+    waybarConfig = ./waybar/gruvbox/config.jsonc;
+    waybarStyle = ./waybar/gruvbox/style.css;
   };
 
   stripHash =
