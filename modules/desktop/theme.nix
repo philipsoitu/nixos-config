@@ -1,7 +1,8 @@
 let
+  theme = rose-pine-theme;
+
   rose-pine-theme = {
     ghostty = "Rose Pine Moon";
-    cursor = "rose-pine-hyprcursor"
   };
 
   gruvbox-theme = {
@@ -15,7 +16,6 @@ let
     else
       str;
 
-  theme = rose-pine-theme;
   themeNoHash = builtins.mapAttrs (_: v: stripHash v) theme;
 in
 {
