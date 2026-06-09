@@ -80,38 +80,9 @@
         };
       };
 
-      services.nginx = {
+      services.tailscale = {
         enable = true;
-
-        recommendedProxySettings = true;
-        recommendedTlsSettings = true;
-
-        virtualHosts."shellbox.soitu.ca" = {
-          forceSSL = true;
-          enableACME = true;
-
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:7681";
-
-            proxyWebsockets = true;
-
-            extraConfig = ''
-              proxy_set_header Host $host;
-              proxy_set_header X-Real-IP $remote_addr;
-            '';
-          };
-        };
       };
-
-      security.acme = {
-        acceptTerms = true;
-        defaults.email = "philip.soitu@gmail.com";
-      };
-
-      networking.firewall.allowedTCPPorts = [
-        80
-        443
-      ];
 
       # Some programs need SUID wrappers, can be configured further or are
       # started in user sessions.
