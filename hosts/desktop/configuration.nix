@@ -83,6 +83,11 @@
       boot.initrd.kernelModules = [ "amdgpu" ];
       hardware.graphics.enable = true;
 
+      services.ollama = {
+        enable = true;
+        package = pkgs.ollama-vulkan;
+      };
+
       # Open ports in the firewall.
       # networking.firewall.allowedTCPPorts = [ ... ];
       # networking.firewall.allowedUDPPorts = [ ... ];
