@@ -80,6 +80,9 @@
       ];
       services.tailscale.enable = true;
 
+      boot.initrd.kernelModules = [ "amdgpu" ];
+      hardware.graphics.enable = true;
+
       # Open ports in the firewall.
       # networking.firewall.allowedTCPPorts = [ ... ];
       # networking.firewall.allowedUDPPorts = [ ... ];
