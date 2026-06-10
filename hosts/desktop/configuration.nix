@@ -85,7 +85,7 @@
 
       services.ollama = {
         enable = true;
-        package = pkgs.ollama-vulkan;
+        package = inputs.nixpkgs-ollama.legacyPackages.${pkgs.system}.ollama-vulkan;
       };
 
       # Open ports in the firewall.
