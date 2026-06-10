@@ -17,6 +17,7 @@
 
       # Use latest kernel.
       boot.kernelPackages = pkgs.linuxPackages_latest;
+      boot.kernelParams = [ "pcie_aspm=off" ];
 
       networking.hostName = "desktop"; # Define your hostname.
       # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -85,7 +86,12 @@
 
       services.ollama = {
         enable = true;
+
         package = inputs.nixpkgs-ollama.legacyPackages.${pkgs.system}.ollama-vulkan;
+
+        environmentVariables = {
+          OLLAMA_VULKAN = "1";
+        };
       };
 
       # Open ports in the firewall.
