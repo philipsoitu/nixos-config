@@ -6,7 +6,7 @@ else
   selected=$(
     printf "%s\n" \
       "$HOME/nixos-config" \
-      "$(find ~/code ~/McGill/W26 -mindepth 1 -maxdepth 1 -type d)" \
+      "$(find ~/work ~/code ~/McGill/W26 -mindepth 1 -maxdepth 1 -type d)" \
       | fzf
     )
 fi
