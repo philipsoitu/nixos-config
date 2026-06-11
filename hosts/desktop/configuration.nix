@@ -89,7 +89,12 @@
 
         package = inputs.nixpkgs-ollama.legacyPackages.${pkgs.system}.ollama-vulkan;
 
+        host = "0.0.0.0";
+        port = 11434;
+        openFirewall = true;
+
         environmentVariables = {
+          OLLAMA_NUM_PARALLEL = "16";
           OLLAMA_VULKAN = "1";
         };
       };
