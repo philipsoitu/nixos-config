@@ -18,6 +18,7 @@
 
       environment.systemPackages = with pkgs; [
         codex
+        pi-coding-agent
         typst
       ];
     };
@@ -33,6 +34,7 @@
         runtimeInputs = [
 
           pkgs.codex
+          pkgs.pi-coding-agent
           pkgs.typst
 
           self'.packages.neovim
