@@ -96,6 +96,7 @@
         environmentVariables = {
           OLLAMA_NUM_PARALLEL = "16";
           OLLAMA_VULKAN = "1";
+          OLLAMA_CONTEXT_LENGTH = "32768";
         };
       };
 
