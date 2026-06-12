@@ -20,6 +20,7 @@
         codex
         pi-coding-agent
         typst
+        nodejs
       ];
     };
 
@@ -36,6 +37,7 @@
           pkgs.codex
           pkgs.pi-coding-agent
           pkgs.typst
+          pkgs.nodejs
 
           self'.packages.neovim
           self'.packages.tmux
