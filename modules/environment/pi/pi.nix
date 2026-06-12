@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ self, ... }:
 {
   flake.nixosModules.pi =
     { pkgs, ... }:
@@ -11,18 +11,8 @@
   perSystem =
     { pkgs, ... }:
     let
-      models = pkgs.writeText "pi-models.json" (
-        builtins.toJSON {
-          providers.ollama = {
-            baseUrl = "http://desktop:11434/v1";
-            api = "openai-completions";
-            apiKey = "ollama";
-            models = [
-              { id = "gemma4:e2b-it-qat"; }
-            ];
-          };
-        }
-      );
+      models = ./models.json;
+      theme = ./theme.json;
     in
     {
       packages.pi = pkgs.writeShellApplication {
@@ -33,8 +23,9 @@
         ];
 
         text = ''
-          mkdir -p "$HOME/.pi/agent"
+          mkdir -p "$HOME/.pi/agent/themes"
           cp -f ${models} "$HOME/.pi/agent/models.json"
+          cp -f ${theme} "$HOME/.pi/agent/themes/rose-pine.json"
           exec ${pkgs.pi-coding-agent}/bin/pi "$@"
         '';
       };
