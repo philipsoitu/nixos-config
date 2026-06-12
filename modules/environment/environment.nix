@@ -11,6 +11,7 @@
       imports = [
         self.nixosModules.bash
         self.nixosModules.git
+        self.nixosModules.pi
         self.nixosModules.neovim
         self.nixosModules.tmux
         self.nixosModules.tmux-sessionizer
@@ -18,7 +19,6 @@
 
       environment.systemPackages = with pkgs; [
         codex
-        pi-coding-agent
         typst
         nodejs
       ];
@@ -35,7 +35,6 @@
         runtimeInputs = [
 
           pkgs.codex
-          pkgs.pi-coding-agent
           pkgs.typst
           pkgs.nodejs
 
@@ -43,6 +42,7 @@
           self'.packages.tmux
           self'.packages.tmux-sessionizer
           self'.packages.git
+          self'.packages.pi
         ];
 
         env = {
