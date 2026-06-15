@@ -21,7 +21,12 @@ vim.lsp.config("lua_ls", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  callback = function()
+  callback = function(args)
+    local filetype = vim.bo[args.buf].filetype
+    if filetype == "javascript" or filetype == "javascriptreact" then
+      return
+    end
+
     vim.lsp.buf.format({ async = false })
   end,
 })
