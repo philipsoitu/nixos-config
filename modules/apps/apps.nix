@@ -7,6 +7,7 @@
         self.nixosModules.firefox
         self.nixosModules.ghostty
         self.nixosModules.zathura
+        self.nixosModules.orca-slicer
       ];
     };
 }
