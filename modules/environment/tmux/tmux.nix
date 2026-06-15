@@ -35,6 +35,7 @@
         set -g status-left "#S"
         set -g mouse on
         set -g focus-events on
+        set -g extended-keys on
 
         bind -n M-1 select-window -t 1
         bind -n M-2 select-window -t 2
