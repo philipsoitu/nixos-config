@@ -7,6 +7,7 @@ vim.lsp.enable({
   "clangd",
   "svelte",
   "vtsls",
+  "gopls",
 })
 
 vim.lsp.config("lua_ls", {

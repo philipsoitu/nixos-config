@@ -54,6 +54,7 @@
         self.packages.${pkgs.stdenv.hostPlatform.system}.git
         wl-clipboard
         ripgrep
+
         lua-language-server
         nil
         tinymist
@@ -62,6 +63,7 @@
         clang-tools
         svelte-language-server
         vtsls
+        gopls
       ];
 
       nvimWrapped = pkgs.writeShellApplication {
