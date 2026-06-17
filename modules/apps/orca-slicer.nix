@@ -9,24 +9,26 @@
 
       # Allow Orca Slicer to discover/connect to Bambu Lab printers on the LAN.
       networking.firewall = {
-        enable = true;
-        allowedUDPPorts = [
-          1990
-          2021
-        ];
         extraCommands = ''
           iptables -I INPUT -m pkttype --pkt-type multicast -j ACCEPT
           iptables -A INPUT -m pkttype --pkt-type multicast -j ACCEPT
+          iptables -I INPUT -p udp -m udp --match multiport --dports 1990,2021 -j ACCEPT
         '';
       };
     };
 
   perSystem =
-    { pkgs, self', ... }:
+    { pkgs, system, ... }:
+    let
+      orcaPkgs = import inputs.nixpkgs-orca-slicer {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
     {
       packages.orca-slicer = inputs.wrappers.lib.wrapPackage {
         inherit pkgs;
-        package = pkgs.orca-slicer;
+        package = orcaPkgs.orca-slicer;
       };
     };
 }
