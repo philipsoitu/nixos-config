@@ -7,6 +7,9 @@
       "models": [
         {
           "id": "gemma4:e2b-it-qat"
+        },
+        {
+          "id": "hf.co/unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q3_K_XL"
         }
       ]
     }
