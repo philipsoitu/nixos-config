@@ -60,6 +60,7 @@
       environment.systemPackages = with pkgs; [
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         #  wget
+        llama-cpp-vulkan
       ];
 
       # Some programs need SUID wrappers, can be configured further or are
@@ -84,21 +85,21 @@
       boot.initrd.kernelModules = [ "amdgpu" ];
       hardware.graphics.enable = true;
 
-      services.ollama = {
-        enable = true;
+      # services.ollama = {
+      #   enable = true;
 
-        package = inputs.nixpkgs-ollama.legacyPackages.${pkgs.system}.ollama-vulkan;
+      #   package = inputs.nixpkgs-ollama.legacyPackages.${pkgs.system}.ollama-vulkan;
 
-        host = "0.0.0.0";
-        port = 11434;
-        openFirewall = true;
+      #   host = "0.0.0.0";
+      #   port = 11434;
+      #   openFirewall = true;
 
-        environmentVariables = {
-          OLLAMA_NUM_PARALLEL = "16";
-          OLLAMA_VULKAN = "1";
-          OLLAMA_CONTEXT_LENGTH = "32768";
-        };
-      };
+      #   environmentVariables = {
+      #     OLLAMA_NUM_PARALLEL = "16";
+      #     OLLAMA_VULKAN = "1";
+      #     OLLAMA_CONTEXT_LENGTH = "32768";
+      #   };
+      # };
 
       # Open ports in the firewall.
       # networking.firewall.allowedTCPPorts = [ ... ];
