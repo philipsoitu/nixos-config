@@ -5,6 +5,12 @@
 
     { config, pkgs, ... }:
 
+    let
+      llamaCppPkgs = import inputs.nixpkgs-llama-cpp {
+        system = pkgs.stdenv.hostPlatform.system;
+        config.allowUnfree = true;
+      };
+    in
     {
       imports = [
         self.nixosModules.desktopHardware
@@ -60,7 +66,7 @@
       environment.systemPackages = with pkgs; [
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         #  wget
-        llama-cpp-vulkan
+        llamaCppPkgs.llama-cpp-vulkan
       ];
 
       # Some programs need SUID wrappers, can be configured further or are
