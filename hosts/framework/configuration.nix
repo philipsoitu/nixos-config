@@ -42,6 +42,8 @@
         variant = "";
       };
 
+      virtualisation.docker.enable = true;
+
       # User
       users.users.phil = {
         isNormalUser = true;
@@ -50,6 +52,7 @@
           "disk"
           "networkmanager"
           "wheel"
+          "docker"
         ];
         packages = with pkgs; [
           wofi
