@@ -91,6 +91,15 @@
       boot.initrd.kernelModules = [ "amdgpu" ];
       hardware.graphics.enable = true;
 
+      security.pam.loginLimits = [
+        {
+          domain = "phil";
+          type = "-";
+          item = "memlock";
+          value = "unlimited";
+        }
+      ];
+
       # services.ollama = {
       #   enable = true;
 
