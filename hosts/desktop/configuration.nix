@@ -10,6 +10,23 @@
         system = pkgs.stdenv.hostPlatform.system;
         config.allowUnfree = true;
       };
+
+      llamaCppLatest = llamaCppPkgs.llama-cpp-vulkan.overrideAttrs (old: {
+        version = "9717";
+
+        src = llamaCppPkgs.fetchFromGitHub {
+          owner = "ggml-org";
+          repo = "llama.cpp";
+          tag = "b9717";
+          hash = "sha256-or3WQBRjK/ZsIhdTGxLPKck7452KvNdahAJrB4+wFgg=";
+          leaveDotGit = true;
+          postFetch = ''
+            git -C "$out" rev-parse --short HEAD > $out/COMMIT
+            find "$out" -name .git -print0 | xargs -0 rm -rf
+          '';
+        };
+        npmDepsHash = "sha256-0dctM/apI3ysMIEVBaBXO9hZMWskpJpNpOws1gwiOYc=";
+      });
     in
     {
       imports = [
@@ -66,7 +83,7 @@
       environment.systemPackages = with pkgs; [
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         #  wget
-        llamaCppPkgs.llama-cpp-vulkan
+        llamaCppLatest
       ];
 
       # Some programs need SUID wrappers, can be configured further or are
