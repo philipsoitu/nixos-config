@@ -19,6 +19,7 @@
 
       environment.systemPackages = with pkgs; [
         codex
+        busybox
         typst
         nodejs
       ];
@@ -37,6 +38,7 @@
           pkgs.codex
           pkgs.typst
           pkgs.nodejs
+          pkgs.busybox
 
           self'.packages.neovim
           self'.packages.tmux
