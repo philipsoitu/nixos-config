@@ -6,6 +6,10 @@
       environment.systemPackages = [
         self.packages.${pkgs.stdenv.hostPlatform.system}.neovim
       ];
+
+      environment.pathsToLink = [
+        "/share/nvim"
+      ];
     };
 
   perSystem =
@@ -82,6 +86,8 @@
         paths = [ nvimWrapped ];
 
         postBuild = ''
+          mkdir -p $out/share
+          ln -s ${pkgs.neovim}/share/nvim $out/share/nvim
           ln -s $out/bin/nvim $out/bin/vi
           ln -s $out/bin/nvim $out/bin/vim
           ln -s $out/bin/nvim $out/bin/vimdiff
