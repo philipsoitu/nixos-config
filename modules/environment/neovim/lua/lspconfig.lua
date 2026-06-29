@@ -13,6 +13,9 @@ vim.lsp.enable({
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
+      diagnostics = {
+        globals = { "hl", "vim" },
+      },
       workspace = {
         library = vim.api.nvim_get_runtime_file("", true),
       }
