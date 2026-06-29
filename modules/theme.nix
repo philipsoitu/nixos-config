@@ -3,14 +3,14 @@ let
 
   rose-pine = {
     ghostty = "Rose Pine Moon";
-    waybarConfig = ./waybar/rose-pine/config.jsonc;
-    waybarStyle = ./waybar/rose-pine/style.css;
+    waybarConfig = ./desktop/waybar/rose-pine/config.jsonc;
+    waybarStyle = ./desktop/waybar/rose-pine/style.css;
   };
 
   gruvbox = {
     ghostty = "Gruvbox Dark";
-    waybarConfig = ./waybar/gruvbox/config.jsonc;
-    waybarStyle = ./waybar/gruvbox/style.css;
+    waybarConfig = ./desktop/waybar/gruvbox/config.jsonc;
+    waybarStyle = ./desktop/waybar/gruvbox/style.css;
   };
 
   stripHash =
