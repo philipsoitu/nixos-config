@@ -80,22 +80,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-ollama": {
-      "locked": {
-        "lastModified": 1780749050,
-        "narHash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "a799d3e3886da994fa307f817a6bc705ae538eeb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "a799d3e3886da994fa307f817a6bc705ae538eeb",
-        "type": "github"
-      }
-    },
     "nixpkgs-orca-slicer": {
       "locked": {
         "lastModified": 1772186193,
@@ -150,7 +134,6 @@
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs",
         "nixpkgs-llama-cpp": "nixpkgs-llama-cpp",
-        "nixpkgs-ollama": "nixpkgs-ollama",
         "nixpkgs-orca-slicer": "nixpkgs-orca-slicer",
         "wrapper-modules": "wrapper-modules",
         "wrappers": "wrappers"

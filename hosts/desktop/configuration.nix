@@ -117,22 +117,6 @@
         }
       ];
 
-      # services.ollama = {
-      #   enable = true;
-
-      #   package = inputs.nixpkgs-ollama.legacyPackages.${pkgs.system}.ollama-vulkan;
-
-      #   host = "0.0.0.0";
-      #   port = 11434;
-      #   openFirewall = true;
-
-      #   environmentVariables = {
-      #     OLLAMA_NUM_PARALLEL = "16";
-      #     OLLAMA_VULKAN = "1";
-      #     OLLAMA_CONTEXT_LENGTH = "32768";
-      #   };
-      # };
-
       # Open ports in the firewall.
       # networking.firewall.allowedTCPPorts = [ ... ];
       # networking.firewall.allowedUDPPorts = [ ... ];
