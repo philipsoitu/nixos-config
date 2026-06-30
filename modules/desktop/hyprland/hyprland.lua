@@ -11,8 +11,8 @@ local menu = "wofi --show drun"
 local mainMod = "SUPER"
 
 hl.on("hyprland.start", function()
-  hl.exec_cmd("sleep 1 && waybar")
-  hl.exec_cmd("sleep 2 && hyprpaper")
+  hl.exec_cmd("waybar")
+  hl.exec_cmd("hyprpaper")
   hl.exec_cmd("dunst")
 end)
 
@@ -79,7 +79,11 @@ hl.config({
 })
 
 hl.curve("snappy", { type = "bezier", points = { { 0.25, 1.5 }, { 0.5, 1 } } })
-hl.animation({ leaf = "windows", enabled = true, speed = 3, bezier = "snappy" })
+hl.animation({
+  leaf = "global",
+  enabled = false,
+})
+
 
 hl.device({
   name = "epic-mouse-v1",
