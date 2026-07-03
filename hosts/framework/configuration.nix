@@ -54,15 +54,7 @@
           "wheel"
           "docker"
         ];
-        packages = with pkgs; [
-          wofi
-        ];
-      };
-
-      # for build-vm
-      users.users.nixosvmtest = {
-        isNormalUser = true;
-        initialPassword = "test";
+        packages = with pkgs; [ ];
       };
 
       # Settings
