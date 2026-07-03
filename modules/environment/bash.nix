@@ -6,6 +6,10 @@
       environment.systemPackages = [
         self.packages.${pkgs.stdenv.hostPlatform.system}.bash
       ];
+
+      programs.bash.interactiveShellInit = ''
+        bind -x '"\C-f":tmux-sessionizer'
+      '';
     };
 
   perSystem =
