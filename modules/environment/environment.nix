@@ -20,7 +20,6 @@
       environment.systemPackages = with pkgs; [
         codex
         typst
-        nodejs
       ];
     };
 
@@ -36,7 +35,6 @@
 
           pkgs.codex
           pkgs.typst
-          pkgs.nodejs
 
           self'.packages.neovim
           self'.packages.tmux
