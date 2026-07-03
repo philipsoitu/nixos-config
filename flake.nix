@@ -18,7 +18,7 @@
       hosts = inputs.import-tree ./hosts;
     in
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = modules.imports ++ hosts.imports;
+      imports = [ ./theme.nix ] ++ modules.imports ++ hosts.imports;
     };
 
 }
