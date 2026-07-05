@@ -9,6 +9,7 @@
         self.nixosModules.ghostty
         self.nixosModules.zathura
         self.nixosModules.orca-slicer
+        self.nixosModules.freecad
       ];
     };
 }
