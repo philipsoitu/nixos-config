@@ -10,14 +10,26 @@
 
   perSystem =
     { pkgs, self', ... }:
-    {
-      packages.lazygit = inputs.wrappers.lib.wrapPackage {
+    let
+      lazygitWrapped = inputs.wrappers.lib.wrapPackage {
         inherit pkgs;
         package = pkgs.lazygit;
 
         runtimeInputs = [
           self'.packages.git
         ];
+      };
+    in
+    {
+      packages.lazygit = pkgs.symlinkJoin {
+        name = "lazygit";
+        paths = [ lazygitWrapped ];
+
+        postBuild = ''
+          ln -s $out/bin/lazygit $out/bin/lg
+        '';
+
+        meta.mainProgram = "lazygit";
       };
     };
 }
