@@ -5,29 +5,6 @@
 
     { config, pkgs, ... }:
 
-    let
-      llamaCppPkgs = import inputs.nixpkgs-llama-cpp {
-        system = pkgs.stdenv.hostPlatform.system;
-        config.allowUnfree = true;
-      };
-
-      llamaCppLatest = llamaCppPkgs.llama-cpp-vulkan.overrideAttrs (old: {
-        version = "9717";
-
-        src = llamaCppPkgs.fetchFromGitHub {
-          owner = "ggml-org";
-          repo = "llama.cpp";
-          tag = "b9717";
-          hash = "sha256-or3WQBRjK/ZsIhdTGxLPKck7452KvNdahAJrB4+wFgg=";
-          leaveDotGit = true;
-          postFetch = ''
-            git -C "$out" rev-parse --short HEAD > $out/COMMIT
-            find "$out" -name .git -print0 | xargs -0 rm -rf
-          '';
-        };
-        npmDepsHash = "sha256-0dctM/apI3ysMIEVBaBXO9hZMWskpJpNpOws1gwiOYc=";
-      });
-    in
     {
       imports = [
         self.nixosModules.desktopHardware
