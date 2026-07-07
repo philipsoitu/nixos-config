@@ -23,6 +23,7 @@
         set -sg escape-time 0
         set -g status-keys vi
         set -g mode-keys vi
+        set-window-option -g mode-keys vi
 
         set -a terminal-features "tmux-256color:RGB"
         set -g renumber-windows on
