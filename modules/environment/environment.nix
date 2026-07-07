@@ -11,6 +11,7 @@
       imports = [
         self.nixosModules.bash
         self.nixosModules.git
+        self.nixosModules.lazygit
         self.nixosModules.pi
         self.nixosModules.neovim
         self.nixosModules.tmux
@@ -40,6 +41,7 @@
           self'.packages.tmux
           self'.packages.tmux-sessionizer
           self'.packages.git
+          self'.packages.lazygit
           self'.packages.pi
         ];
 
