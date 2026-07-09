@@ -58,6 +58,8 @@
         wl-clipboard
         ripgrep
 
+        tree-sitter
+
         lua-language-server
         nil
         tinymist
