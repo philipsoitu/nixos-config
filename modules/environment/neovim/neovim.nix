@@ -36,7 +36,6 @@
         nvim-lspconfig
         plenary-nvim
         telescope-nvim
-        nvim-treesitter
       ];
 
       pluginTree = pkgs.linkFarm "neovim-plugins" (
