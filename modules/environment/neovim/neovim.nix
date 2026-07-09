@@ -56,9 +56,11 @@
       runtimeInputs = with pkgs; [
         self.packages.${pkgs.stdenv.hostPlatform.system}.git
         wl-clipboard
-        ripgrep
 
+        ripgrep
+        fd
         tree-sitter
+        gcc
 
         lua-language-server
         nil
