@@ -45,11 +45,25 @@
         }) plugins
       );
 
+      treesitterParsers = pkgs.tree-sitter.withPlugins (p: with p; [
+        tree-sitter-python
+        tree-sitter-javascript
+        tree-sitter-typescript
+        tree-sitter-lua
+        tree-sitter-c
+      ]);
+
+      treesitterParserTree = pkgs.runCommand "neovim-treesitter-parsers" { } ''
+        mkdir -p $out/nvim/parser
+        ln -s ${treesitterParsers}/*.so $out/nvim/parser/
+      '';
+
       configTree = pkgs.symlinkJoin {
         name = "neovim-config";
         paths = [
           (pkgs.writeTextDir "nvim/init.lua" initLua)
           pluginTree
+          treesitterParserTree
         ];
       };
 
