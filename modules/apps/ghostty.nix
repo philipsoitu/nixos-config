@@ -14,7 +14,7 @@
     let
       ghosttyConfig = pkgs.writeText "ghostty-config" ''
         theme = ${self.theme.ghostty}
-        background-opacity = 0.8
+        background-opacity = 1.0
 
         font-feature = -calt, -liga, -dlig
 
