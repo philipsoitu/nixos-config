@@ -1,119 +1,50 @@
-{ self, inputs, ... }:
-{
-  flake.nixosModules.neovim =
-    { pkgs, lib, ... }:
-    {
-      environment.systemPackages = [
-        self.packages.${pkgs.stdenv.hostPlatform.system}.neovim
-      ];
-
-      environment.pathsToLink = [
-        "/share/nvim"
-      ];
+{ self, inputs, ... }: {
+  flake.nixosModules.neovim = { pkgs, lib, ... }: {
+    environment.variables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
     };
 
+    environment.systemPackages = [
+      self.packages.${pkgs.stdenv.hostPlatform.system}.neovim
+    ];
+  };
+
   perSystem =
-    { pkgs, lib, ... }:
+    {
+      pkgs,
+      lib,
+      self',
+      ...
+    }:
     let
-      initLua = ''
-        ${builtins.readFile ./lua/options.lua}
-        ${builtins.readFile ./lua/keymaps.lua}
-        ${builtins.readFile ./lua/netrw.lua}
-        ${builtins.readFile ./lua/tabline.lua}
-
-        require("rose-pine").setup()
-        vim.cmd("colorscheme rose-pine-moon")
-
-        ${builtins.readFile ./lua/gitsigns.lua}
-        ${builtins.readFile ./lua/lspconfig.lua}
-        ${builtins.readFile ./lua/telescope.lua}
-        ${builtins.readFile ./lua/treesitter.lua}
-      '';
-
-      plugins = with pkgs.vimPlugins; [
-        rose-pine
-        gitsigns-nvim
-        nvim-lspconfig
-        plenary-nvim
-        telescope-nvim
-        nvim-treesitter
+      getPlugins = pkgs: [
+        (import ./plugins/colorscheme/_colorscheme.nix { inherit pkgs; })
+        (import ./plugins/options/_options.nix { inherit pkgs; })
+        (import ./plugins/gitsigns/_gitsigns.nix { inherit pkgs; })
+        (import ./plugins/keymaps/_keymaps.nix { inherit pkgs; })
+        (import ./plugins/netrw/_netrw.nix { inherit pkgs; })
+        (import ./plugins/lspconfig/_lspconfig.nix { inherit pkgs; })
+        (import ./plugins/tabline/_tabline.nix { inherit pkgs; })
+        (import ./plugins/telescope/_telescope.nix { inherit pkgs; })
+        (import ./plugins/treesitter/_treesitter.nix { inherit pkgs; })
       ];
 
-      pluginTree = pkgs.linkFarm "neovim-plugins" (
-        map (plugin: {
-          name = "nvim/pack/plugins/start/${lib.getName plugin}";
-          path = plugin;
-        }) plugins
-      );
+      modules = getPlugins pkgs;
 
-      treesitterParsers = pkgs.tree-sitter.withPlugins (
-        p: with p; [
-          tree-sitter-python
-          tree-sitter-javascript
-          tree-sitter-typescript
-          tree-sitter-lua
-          tree-sitter-c
-        ]
-      );
-
-      treesitterParserTree = pkgs.runCommand "neovim-treesitter-parsers" { } ''
-        mkdir -p $out/nvim/parser
-        ln -s ${treesitterParsers}/*.so $out/nvim/parser/
-      '';
-
-      configTree = pkgs.symlinkJoin {
-        name = "neovim-config";
-        paths = [
-          (pkgs.writeTextDir "nvim/init.lua" initLua)
-          pluginTree
-          treesitterParserTree
-        ];
+      mergedConfig = {
+        plugins = lib.concatMap (m: m.plugins or [ ]) modules;
+        runtimePkgs = lib.concatMap (m: m.runtimePkgs or [ ]) modules;
+        lua = lib.concatStringsSep "\n" (map (m: m.lua or "") modules);
       };
 
-      runtimeInputs = with pkgs; [
-        self.packages.${pkgs.stdenv.hostPlatform.system}.git
-        wl-clipboard
-
-        ripgrep
-        fd
-        tree-sitter
-        gcc
-
-        lua-language-server
-        nil
-        tinymist
-        pyright
-        zls
-        clang-tools
-        svelte-language-server
-        vtsls
-        gopls
-      ];
-
-      nvimWrapped = pkgs.writeShellApplication {
-        name = "nvim";
-        inherit runtimeInputs;
-
-        text = ''
-          export XDG_CONFIG_HOME="${configTree}"
-          exec ${pkgs.neovim}/bin/nvim "$@"
-        '';
-      };
     in
     {
-      packages.neovim = pkgs.symlinkJoin {
-        name = "neovim";
-        paths = [ nvimWrapped ];
-
-        postBuild = ''
-          mkdir -p $out/share
-          ln -s ${pkgs.neovim}/share/nvim $out/share/nvim
-          ln -s $out/bin/nvim $out/bin/vi
-          ln -s $out/bin/nvim $out/bin/vim
-          ln -s $out/bin/nvim $out/bin/vimdiff
-        '';
-
-        meta.mainProgram = "nvim";
+      packages.neovim = inputs.wrapper-modules.wrappers.neovim.wrap {
+        inherit pkgs;
+        specs.allPlugins = mergedConfig.plugins;
+        runtimePkgs = mergedConfig.runtimePkgs;
+        settings.config_directory = pkgs.writeTextDir "init.lua" mergedConfig.lua;
       };
     };
 }

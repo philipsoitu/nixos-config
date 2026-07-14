@@ -18,7 +18,9 @@
       importAll =
         path:
         lib.fileset.toList (
-          inputs.nixpkgs.lib.fileset.fileFilter (file: file.hasExt "nix" && file.name != "flake.nix") path
+          inputs.nixpkgs.lib.fileset.fileFilter (
+            file: file.hasExt "nix" && file.name != "flake.nix" && !lib.hasPrefix "_" file.name
+          ) path
         );
     in
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
