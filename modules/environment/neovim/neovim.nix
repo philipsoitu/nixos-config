@@ -19,7 +19,7 @@
     }:
     let
       getPlugins = pkgs: [
-        (import self.theme.nvimTheme { inherit pkgs; })
+        (import self.theme.nvim.theme { inherit pkgs; })
         (import ./plugins/options/_options.nix { inherit pkgs; })
         (import ./plugins/gitsigns/_gitsigns.nix { inherit pkgs; })
         (import ./plugins/keymaps/_keymaps.nix { inherit pkgs; })

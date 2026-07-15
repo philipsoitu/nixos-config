@@ -7,7 +7,7 @@ let
       config = ./modules/desktop/waybar/rose-pine/config.jsonc;
       style = ./modules/desktop/waybar/rose-pine/style.css;
     };
-    nvimTheme = ./modules/environment/neovim/plugins/colorscheme/rose-pine/_rose-pine.nix;
+    nvim.theme = ./modules/environment/neovim/plugins/colorscheme/rose-pine/_rose-pine.nix;
     wallpaper = ./wallpapers/rose-pine/forest-5.jpg;
   };
 
@@ -17,7 +17,7 @@ let
       config = ./modules/desktop/waybar/gruvbox/config.jsonc;
       style = ./modules/desktop/waybar/gruvbox/style.css;
     };
-    nvimTheme = ./modules/environment/neovim/plugins/colorscheme/gruvbox/_gruvbox.nix;
+    nvim.theme = ./modules/environment/neovim/plugins/colorscheme/gruvbox/_gruvbox.nix;
     wallpaper = ./wallpapers/gruvbox/lake.jpg;
   };
 
