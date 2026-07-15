@@ -18,24 +18,17 @@
       ...
     }:
     let
-      getPlugins = pkgs: [
-        (import self.theme.nvim.theme { inherit pkgs; })
-        (import ./plugins/options/_options.nix { inherit pkgs; })
-        (import ./plugins/gitsigns/_gitsigns.nix { inherit pkgs; })
-        (import ./plugins/keymaps/_keymaps.nix { inherit pkgs; })
-        (import ./plugins/netrw/_netrw.nix { inherit pkgs; })
-        (import ./plugins/lspconfig/_lspconfig.nix { inherit pkgs; })
-        (import ./plugins/tabline/_tabline.nix { inherit pkgs; })
-        (import ./plugins/telescope/_telescope.nix { inherit pkgs; })
-        (import ./plugins/treesitter/_treesitter.nix { inherit pkgs; })
+      plugins = [
+        self.nvimPluginOptions
+        self.nvimPluginGitsigns
       ];
 
-      modules = getPlugins pkgs;
+      modules = map (plugin: plugin { inherit pkgs; }) plugins;
 
       mergedConfig = {
-        plugins = lib.concatMap (m: m.plugins or [ ]) modules;
-        runtimePkgs = lib.concatMap (m: m.runtimePkgs or [ ]) modules;
-        lua = lib.concatStringsSep "\n" (map (m: m.lua or "") modules);
+        plugins = lib.concatMap (module: module.plugins or [ ]) modules;
+        runtimePkgs = lib.concatMap (module: module.runtimePkgs or [ ]) modules;
+        lua = lib.concatStringsSep "\n" (map (module: module.lua or "") modules);
       };
 
     in
