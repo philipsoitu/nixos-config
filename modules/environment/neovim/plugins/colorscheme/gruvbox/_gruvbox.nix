@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   plugins = with pkgs.vimPlugins; [
-    rose-pine
+    gruvbox-nvim
   ];
 
-  lua = builtins.readFile ./colorscheme.lua;
+  lua = builtins.readFile ./gruvbox.lua;
 }
