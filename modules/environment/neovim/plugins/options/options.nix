@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nvimPluginOptions = { pkgs, ... }: {
+  flake.nvimPlugins.options = { pkgs, ... }: {
     runtimePkgs = with pkgs; [
       wl-clipboard
     ];

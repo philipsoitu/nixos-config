@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nvimPluginGitsigns = { pkgs, ... }: {
+  flake.nvimPlugins.gitsigns = { pkgs, ... }: {
     plugins = with pkgs.vimPlugins; [
       gitsigns-nvim
     ];

@@ -19,8 +19,8 @@
     }:
     let
       plugins = [
-        self.nvimPluginOptions
-        self.nvimPluginGitsigns
+        self.nvimPlugins.options
+        self.nvimPlugins.gitsigns
       ];
 
       modules = map (plugin: plugin { inherit pkgs; }) plugins;
