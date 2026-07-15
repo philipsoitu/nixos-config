@@ -11,29 +11,23 @@
   perSystem =
     { pkgs, ... }:
     let
-      wallpapers = pkgs.runCommand "hyprpaper-wallpapers" { } ''
-        mkdir -p "$out/share"
-        cp -r ${./../../wallpapers} "$out/share/wallpapers"
-      '';
-
-      currentWallpaper = "${wallpapers}/share/wallpapers/rose-pine/forest-5.jpg";
       hyprpaperConfig = pkgs.writeText "hyprpaper.conf" ''
         ipc = true
         splash = false
 
         wallpaper {
           monitor = eDP-1
-          path = ${currentWallpaper}
+          path = ${self.theme.wallpaper}
         }
 
         wallpaper {
           monitor = DP-2
-          path = ${currentWallpaper}
+          path = ${self.theme.wallpaper}
         }
 
         wallpaper {
           monitor = HDMI-A-1
-          path = ${currentWallpaper}
+          path = ${self.theme.wallpaper}
         }
       '';
     in
