@@ -19,8 +19,16 @@
     }:
     let
       plugins = [
+        self.theme.nvimTheme
         self.nvimPlugins.options
         self.nvimPlugins.gitsigns
+        self.nvimPlugins.keymaps
+        self.nvimPlugins.lspconfig
+        self.nvimPlugins.netrw
+        self.nvimPlugins.options
+        self.nvimPlugins.tabline
+        self.nvimPlugins.telescope
+        self.nvimPlugins.treesitter
       ];
 
       modules = map (plugin: plugin { inherit pkgs; }) plugins;

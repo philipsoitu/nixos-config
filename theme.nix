@@ -1,3 +1,5 @@
+{ self, ... }:
+
 let
   theme = gruvbox;
 
@@ -7,7 +9,7 @@ let
       config = ./modules/desktop/waybar/rose-pine/config.jsonc;
       style = ./modules/desktop/waybar/rose-pine/style.css;
     };
-    nvim.theme = ./modules/environment/neovim/plugins/colorscheme/rose-pine/_rose-pine.nix;
+    nvimTheme = self.nvimPlugins.rose-pine;
     wallpaper = ./wallpapers/rose-pine/forest-5.jpg;
   };
 
@@ -17,7 +19,7 @@ let
       config = ./modules/desktop/waybar/gruvbox/config.jsonc;
       style = ./modules/desktop/waybar/gruvbox/style.css;
     };
-    nvim.theme = ./modules/environment/neovim/plugins/colorscheme/gruvbox/_gruvbox.nix;
+    nvimTheme = self.nvimPlugins.gruvbox;
     wallpaper = ./wallpapers/gruvbox/lake.jpg;
   };
 
