@@ -1,7 +1,7 @@
 { self, ... }:
 
 let
-  theme = gruvbox;
+  theme = rose-pine;
 
   rose-pine = {
     ghostty = "Rose Pine Moon";
