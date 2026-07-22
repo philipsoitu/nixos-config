@@ -4,11 +4,11 @@
     { ... }:
     {
       imports = [
+        self.nixosModules.pipewire
         self.nixosModules.hyprcursor
         self.nixosModules.hyprland
         self.nixosModules.hyprshot
         self.nixosModules.wofi
-        self.nixosModules.sddm
         self.nixosModules.dms-shell
       ];
     };

@@ -3,6 +3,17 @@
   flake.nixosModules.dms-shell =
     { pkgs, ... }:
     {
+      services.upower.enable = true;
+
+      environment.systemPackages = [
+        pkgs.pulseaudio
+      ];
+
+      services.displayManager.dms-greeter = {
+        enable = true;
+        compositor.name = "hyprland";
+      };
+
       programs.dms-shell = {
         enable = true;
 
