@@ -7,7 +7,8 @@
     {
       imports = [
         self.nixosModules.frameworkHardware
-        self.nixosModules.desktop
+        # self.nixosModules.desktop
+        self.nixosModules.dms-hyprland
         self.nixosModules.apps
         self.nixosModules.environment
         self.nixosModules.core
