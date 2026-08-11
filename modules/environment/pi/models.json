@@ -1,15 +1,15 @@
 {
   "providers": {
-    "llama-cpp": {
-      "baseUrl": "http://desktop:8001/v1",
+    "ollama": {
+      "baseUrl": "http://localhost:11434/v1",
       "api": "openai-completions",
       "apiKey": "none",
       "models": [
           {
-              "id": "unsloth/gemma-4-26B-A4B-it-qat-GGUF:UD-Q4_K_XL",
+              "id": "gemma4:e2b-it-qat",
               "reasoning": true,
               "input": ["text", "image"],
-              "contextWindow": 32768
+              "contextWindow": 65536
           }
       ]
     }
