@@ -6,6 +6,7 @@
       extraGroups = [
         "networkmanager"
         "wheel"
+        "dialout"
       ];
     };
   };
