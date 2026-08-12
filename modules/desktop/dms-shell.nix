@@ -14,6 +14,8 @@
         compositor.name = "hyprland";
       };
 
+      services.displayManager.defaultSession = "hyprland-uwsm";
+
       programs.dms-shell = {
         enable = true;
 
