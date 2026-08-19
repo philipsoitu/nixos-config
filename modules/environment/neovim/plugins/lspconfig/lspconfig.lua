@@ -2,7 +2,8 @@ vim.lsp.enable({
   "lua_ls",
   "nil_ls",
   "tinymist",
-  "pyright",
+  "basedpyright",
+  "ruff",
   "zls",
   "clangd",
   "svelte",
@@ -27,7 +28,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
       return
     end
 
-    vim.lsp.buf.format({ async = false })
+    local format_opts = { async = false }
+    if filetype == "python" then
+      format_opts.filter = function(client)
+        return client.name == "ruff"
+      end
+    end
+
+    vim.lsp.buf.format(format_opts)
   end,
 })
 

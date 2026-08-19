@@ -9,7 +9,8 @@
       lua-language-server
       nil
       tinymist
-      pyright
+      basedpyright
+      ruff
       zls
       clang-tools
       svelte-language-server
