@@ -10,6 +10,13 @@
 
   perSystem =
     { pkgs, ... }:
+    let
+      quickshellConfig = pkgs.runCommand "quickshell-config" { } ''
+        mkdir -p "$out"
+        cp ${./shell.qml} "$out/shell.qml"
+        cp ${./HyprlandWorkspaces.qml} "$out/HyprlandWorkspaces.qml"
+      '';
+    in
     {
       packages.quickshell = pkgs.writeShellApplication {
         name = "quickshell";
@@ -19,7 +26,7 @@
         ];
 
         text = ''
-          exec qs -p ${./shell.qml} "$@"
+          exec qs -p ${quickshellConfig} "$@"
         '';
       };
     };

@@ -10,10 +10,23 @@ PanelWindow {
   }
 
   implicitHeight: 30
+  color: "#1d2021"
+
+  HyprlandWorkspaces {
+    anchors {
+      left: parent.left
+      leftMargin: 4
+      verticalCenter: parent.verticalCenter
+    }
+  }
 
   Text {
     id: clock
     anchors.centerIn: parent
+    color: "#d4be98"
+    font.family: "JetBrainsMono Nerd Font"
+    font.pixelSize: 12
+    font.weight: Font.Medium
 
     Process {
       // give the process object an id so we can talk
