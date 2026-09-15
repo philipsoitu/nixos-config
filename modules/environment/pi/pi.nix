@@ -24,8 +24,17 @@
 
         text = ''
           mkdir -p "$HOME/.pi/agent/themes"
+
           cp -f ${models} "$HOME/.pi/agent/models.json"
           cp -f ${theme} "$HOME/.pi/agent/themes/rose-pine.json"
+
+          if [ -r "$HOME/.pi/agent/ica.env" ]; then
+            set -a
+            # shellcheck disable=SC1091
+            . "$HOME/.pi/agent/ica.env"
+            set +a
+          fi
+
           exec ${pkgs.pi-coding-agent}/bin/pi "$@"
         '';
       };
