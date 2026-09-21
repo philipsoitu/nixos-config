@@ -30,8 +30,6 @@
       boot.initrd.kernelModules = [ "amdgpu" ];
       hardware.graphics.enable = true;
 
-      hardware.bluetooth.enable = true;
-
       programs.nix-ld.enable = true;
 
     };
