@@ -19,7 +19,6 @@
           self.packages.${pkgs.stdenv.hostPlatform.system}.tmux
           findutils
           coreutils
-          procps
         ];
 
         text = builtins.readFile ./tmux-sessionizer.sh;
