@@ -1,8 +1,8 @@
 { ... }:
 {
   flake.nvimPlugins.options = { pkgs, ... }: {
-    runtimePkgs = with pkgs; [
-      wl-clipboard
+    runtimePkgs = pkgs.lib.optionals pkgs.stdenv.hostPlatform.isLinux [
+      pkgs.wl-clipboard
     ];
 
     lua = builtins.readFile ./options.lua;
