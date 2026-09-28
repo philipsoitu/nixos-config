@@ -5,13 +5,27 @@ if [[ $# -eq 1 ]]; then
 else
   selected=$(
     {
+      # The nixos-config checkout is always available to the sessionizer.
       [[ -d "$HOME/nixos-config" ]] && printf '%s\n' "$HOME/nixos-config"
 
-      for directory in "$HOME/work" "$HOME/code" "$HOME/McGill/W26"; do
-        if [[ -d $directory ]]; then
-          find "$directory" -mindepth 1 -maxdepth 1 -type d
-        fi
-      done
+      # Add one directory to search per line in this file.
+      sessionizer_config="$HOME/.tmux-sessionizer"
+      if [[ -f $sessionizer_config ]]; then
+        while IFS= read -r directory || [[ -n $directory ]]; do
+          # Ignore empty lines and comments.
+          [[ -z $directory || $directory == \#* ]] && continue
+
+          # Allow paths relative to the home directory in the config file.
+          case $directory in
+            \~/*) directory="$HOME/${directory:2}" ;;
+            \$HOME/*) directory="$HOME/${directory:6}" ;;
+          esac
+
+          if [[ -d $directory ]]; then
+            find "$directory" -mindepth 1 -maxdepth 1 -type d
+          fi
+        done < "$sessionizer_config"
+      fi
     } | fzf
   )
 fi
