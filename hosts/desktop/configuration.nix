@@ -9,7 +9,7 @@
       imports = [
         self.nixosModules.desktopHardware
         self.nixosModules.environment
-        self.nixosModules.desktop
+        self.nixosModules.dms-hyprland
         self.nixosModules.apps
         self.nixosModules.core
       ];
