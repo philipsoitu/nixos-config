@@ -90,6 +90,11 @@ hl.device({
   sensitivity = -0.5,
 })
 
+hl.device({
+  name = "logitech-usb-receiver-mouse",
+  sensitivity = -0.5,
+})
+
 hl.bind("Print", hl.dsp.exec_cmd([[sh -c 'mkdir -p ~/screenshot && hyprshot -m region -o ~/screenshot']]))
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
