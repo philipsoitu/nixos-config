@@ -20,6 +20,7 @@
 
         runtimeInputs = [
           pkgs.pi-coding-agent
+          pkgs.wl-clipboard
         ];
 
         text = ''
