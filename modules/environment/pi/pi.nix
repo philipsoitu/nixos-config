@@ -12,7 +12,8 @@
     { pkgs, ... }:
     let
       models = ./models.json;
-      theme = ./theme.json;
+      selectedTheme = self.theme.pi;
+      selectedThemeName = (builtins.fromJSON (builtins.readFile selectedTheme)).name;
     in
     {
       packages.pi = pkgs.writeShellApplication {
@@ -27,7 +28,7 @@
           mkdir -p "$HOME/.pi/agent/themes"
 
           cp -f ${models} "$HOME/.pi/agent/models.json"
-          cp -f ${theme} "$HOME/.pi/agent/themes/rose-pine.json"
+          cp -f ${selectedTheme} "$HOME/.pi/agent/themes/${selectedThemeName}.json"
 
           if [ -r "$HOME/.pi/agent/ica.env" ]; then
             set -a
@@ -36,7 +37,7 @@
             set +a
           fi
 
-          exec ${pkgs.pi-coding-agent}/bin/pi "$@"
+          exec ${pkgs.pi-coding-agent}/bin/pi --use-theme ${selectedThemeName} "$@"
         '';
       };
     };

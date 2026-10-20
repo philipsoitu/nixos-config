@@ -10,6 +10,7 @@ let
       style = ./modules/desktop/waybar/rose-pine/style.css;
     };
     nvimTheme = self.nvimPlugins.rose-pine;
+    pi = ./modules/environment/pi/rose-pine.json;
     wallpaper = ./wallpapers/rose-pine/forest-5.jpg;
   };
 
@@ -20,6 +21,7 @@ let
       style = ./modules/desktop/waybar/gruvbox/style.css;
     };
     nvimTheme = self.nvimPlugins.gruvbox;
+    pi = ./modules/environment/pi/gruvbox.json;
     wallpaper = ./wallpapers/gruvbox/lake.jpg;
   };
 
