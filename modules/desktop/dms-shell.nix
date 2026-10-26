@@ -4,6 +4,9 @@
     { pkgs, ... }:
     {
       services.upower.enable = true;
+      # Backend for DMS's power-profile controls. Balanced mode automatically
+      # favors power saving on battery with AMD P-State.
+      services.power-profiles-daemon.enable = true;
 
       environment.systemPackages = [
         pkgs.pulseaudio
