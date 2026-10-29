@@ -13,6 +13,8 @@
       ruff
       zls
       clang-tools
+      arduino-language-server
+      arduino-cli
       svelte-language-server
       vtsls
       gopls
