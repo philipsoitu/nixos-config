@@ -18,17 +18,11 @@
     };
 
   perSystem =
-    { pkgs, system, ... }:
-    let
-      orcaPkgs = import inputs.nixpkgs-orca-slicer {
-        inherit system;
-        config.allowUnfree = true;
-      };
-    in
+    { pkgs, ... }:
     {
       packages.orca-slicer = inputs.wrappers.lib.wrapPackage {
         inherit pkgs;
-        package = orcaPkgs.orca-slicer;
+        package = pkgs.orca-slicer;
       };
     };
 }

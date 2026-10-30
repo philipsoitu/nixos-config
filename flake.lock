@@ -65,22 +65,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-orca-slicer": {
-      "locked": {
-        "lastModified": 1772186193,
-        "narHash": "sha256-D5tSxP5x7SDj/jsnQii5FzrRd5wep8H2inxz7gDokZs=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "62efab0dada7d38f14f7147bdd6c350780e9af10",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "62efab0dada7d38f14f7147bdd6c350780e9af10",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1791366222,
@@ -118,7 +102,6 @@
         "flake-parts": "flake-parts",
         "nixpkgs": "nixpkgs",
         "nixpkgs-llama-cpp": "nixpkgs-llama-cpp",
-        "nixpkgs-orca-slicer": "nixpkgs-orca-slicer",
         "wrapper-modules": "wrapper-modules",
         "wrappers": "wrappers"
       }
