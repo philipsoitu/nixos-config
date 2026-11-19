@@ -5,109 +5,15 @@
       "api": "openai-completions",
       "apiKey": "$CODEX_API_KEY",
       "models": [
-          {
-              "id": "claude-sonnet-5-5",
-              "name": "Claude Sonnet 5.5 (IBM ICA)",
-              "reasoning": true,
-              "compat": {
-                  "supportsStore": false
-              },
-              "input": ["text", "image"],
-              "cost": {
-                  "input": 2,
-                  "output": 10,
-                  "cacheRead": 0.1,
-                  "cacheWrite": 2.5
-              },
-              "contextWindow": 1000000,
-              "maxTokens": 128000
-          },
-          {
-              "id": "claude-haiku-5-5",
-              "name": "Claude Haiku 5.5 (IBM ICA)",
-              "reasoning": true,
-              "compat": {
-                  "supportsStore": false
-              },
-              "input": ["text", "image"],
-              "cost": {
-                  "input": 0,
-                  "output": 0,
-                  "cacheRead": 0,
-                  "cacheWrite": 0,
-                  "tiers": [
-                      {
-                          "inputTokensAbove": 100000,
-                          "input": 0.5,
-                          "output": 2.5,
-                          "cacheRead": 0.05,
-                          "cacheWrite": 0.625
-                      }
-                  ]
-              },
-              "contextWindow": 1000000,
-              "maxTokens": 128000
-          },
-          {
-              "id": "rits/zai-org/glm-5-3",
-              "name": "GLM 5.3 (IBM ICA)",
-              "reasoning": true,
-              "input": ["text"],
-              "cost": {
-                  "input": 0,
-                  "output": 0,
-                  "cacheRead": 0,
-                  "cacheWrite": 0
-              },
-              "contextWindow": 1048576,
-              "maxTokens": 1048576
-          },
-          {
-              "id": "gpt-6.1-sol",
-              "name": "GPT-6.1 Sol (IBM ICA)",
-              "reasoning": true,
-              "input": ["text", "image"],
-              "cost": {
-                  "input": 5,
-                  "output": 30,
-                  "cacheRead": 0.5,
-                  "cacheWrite": 6.25,
-                  "tiers": [
-                      {
-                          "inputTokensAbove": 272000,
-                          "input": 10,
-                          "output": 45,
-                          "cacheRead": 1,
-                          "cacheWrite": 12.5
-                      }
-                  ]
-              },
-              "contextWindow": 272000,
-              "maxTokens": 128000
-          },
-          {
-              "id": "gpt-6-luna",
-              "name": "GPT-6 Luna (IBM ICA)",
-              "reasoning": true,
-              "input": ["text", "image"],
-              "cost": {
-                  "input": 0.2,
-                  "output": 1.2,
-                  "cacheRead": 0.02,
-                  "cacheWrite": 0.25,
-                  "tiers": [
-                      {
-                          "inputTokensAbove": 272000,
-                          "input": 0.4,
-                          "output": 1.8,
-                          "cacheRead": 0.04,
-                          "cacheWrite": 0.5
-                      }
-                  ]
-              },
-              "contextWindow": 272000,
-              "maxTokens": 128000
-          }
+        {
+          "id": "rits/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "name": "DeepSeek V4.1 Flash (CurveBender)",
+          "reasoning": true,
+          "contextWindow": 1048576,
+          "maxTokens": 1048576,
+          "input": ["text", "image"],
+          "thinkingLevelMap": { "off": "none", "max": "max" }
+        },
       ]
     }
   }
